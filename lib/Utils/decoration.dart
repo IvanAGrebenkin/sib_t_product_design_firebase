@@ -6,4 +6,4 @@ const textFormFieldDecoration = OutlineInputBorder(
     color: Color(0xffECEFF1),
     width: 2.0,
   ),
-);
+);// Оформление полей ввода текста на странице авторизации

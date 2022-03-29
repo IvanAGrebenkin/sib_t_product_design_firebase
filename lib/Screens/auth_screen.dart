@@ -11,21 +11,15 @@ class AuthScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              // Container(
-              //   // height:100,
-              //   height: double.infinity,
-              // ),
               Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                     alignment: Alignment.bottomCenter,
                     image: AssetImage('assets/images/sibt_auth_ background.png'),
                     fit: BoxFit.fitWidth,
-                  ),
+                  ),// Задний фон
                 ),
                 padding: const EdgeInsets.symmetric(horizontal: 50),
-                // width: double.infinity,
-                // height: double.infinity,
                 child: Center(
                   child: Column(
                     children: [
@@ -46,7 +40,7 @@ class AuthScreen extends StatelessWidget {
 
                         ),
                       ),// Поле ввода Логина
-                      SizedBox(height: 40),// Отступ
+                      const SizedBox(height: 40),// Отступ
                       SizedBox(width: 244, height: 40,
                         child: TextFormField(
                           decoration: const InputDecoration(
@@ -58,20 +52,11 @@ class AuthScreen extends StatelessWidget {
 
                         ),
                       ),// Поле ввода Пароля
-                      SizedBox(height: 40),// Отступ
+                      const SizedBox(height: 40),// Отступ
                       ElevatedButton(
                         onPressed: (){},
                         child: Text('Войти'),),// Кнопка "Войти"
-                      SizedBox(height: 380),// Отступ
-                      // InkWell(
-                      //   child: Text('Регистрация'),
-                      // ),// Ссылка на "Регистрацию"
-                      // SizedBox(height: 50),// Отступ
-                      // InkWell(
-                      //   child: Text('Забыли пароль?'),
-                      // ),// Ссылка на "Забыли пароль?"
-                      // SizedBox(height: 50),// Отступ
-
+                      const SizedBox(height: 380),// Отступ
                     ],
                   ),
                 ),
