@@ -53,9 +53,23 @@ class AuthScreen extends StatelessWidget {
                         ),
                       ),// Поле ввода Пароля
                       const SizedBox(height: 40),// Отступ
-                      ElevatedButton(
-                        onPressed: (){},
-                        child: Text('Войти'),),// Кнопка "Войти"
+                      SizedBox(
+                        width:154,
+                        height:42,
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: const Color(0xff0079D0),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(36.0)),
+                            ),
+                            onPressed: (){},
+                            child: const Text('Войти',
+                              style: TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                        ),
+                      ),// Кнопка 'Войти'
                       const SizedBox(height: 380),// Отступ
                     ],
                   ),
