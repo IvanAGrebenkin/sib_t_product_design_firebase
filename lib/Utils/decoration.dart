@@ -7,3 +7,10 @@ const textFormFieldDecoration = OutlineInputBorder(
     width: 2.0,
   ),
 );// Оформление полей ввода текста на странице авторизации
+
+final elevatedButtonDecoration= ElevatedButton.styleFrom(
+  primary: const Color(0xff0079D0),
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(36.0),
+  ),
+);// Оформление кнопок

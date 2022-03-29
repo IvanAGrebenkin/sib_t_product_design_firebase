@@ -31,13 +31,12 @@ class AuthScreen extends StatelessWidget {
                       const SizedBox(height: 35),// Отступ
                       SizedBox(width: 244, height: 40,
                         child: TextFormField(
-                            decoration: const InputDecoration(
-                              enabledBorder: textFormFieldDecoration,
-                              focusedBorder: textFormFieldDecoration,
-                              filled: true,
-                              fillColor: Color(0xffECEFF1),
-                              labelText: 'Логин',),
-
+                          decoration: const InputDecoration(
+                            enabledBorder: textFormFieldDecoration,
+                            focusedBorder: textFormFieldDecoration,
+                            filled: true,
+                            fillColor: Color(0xffECEFF1),
+                            labelText: 'Логин',),
                         ),
                       ),// Поле ввода Логина
                       const SizedBox(height: 40),// Отступ
@@ -49,7 +48,6 @@ class AuthScreen extends StatelessWidget {
                             filled: true,
                             fillColor: Color(0xffECEFF1),
                             labelText: 'Пароль',),
-
                         ),
                       ),// Поле ввода Пароля
                       const SizedBox(height: 40),// Отступ
@@ -57,11 +55,7 @@ class AuthScreen extends StatelessWidget {
                         width:154,
                         height:42,
                         child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              primary: const Color(0xff0079D0),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(36.0)),
-                            ),
+                            style: elevatedButtonDecoration,
                             onPressed: (){},
                             child: const Text('Войти',
                               style: TextStyle(
