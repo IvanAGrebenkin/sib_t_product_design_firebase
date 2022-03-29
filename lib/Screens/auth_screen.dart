@@ -56,7 +56,7 @@ class AuthScreen extends StatelessWidget {
                         height:42,
                         child: ElevatedButton(
                             style: elevatedButtonDecoration,
-                            onPressed: (){},
+                            onPressed: (){Navigator.pushNamed(context, '/consent_to_use');},
                             child: const Text('Войти',
                               style: TextStyle(
                                 fontSize: 18,
