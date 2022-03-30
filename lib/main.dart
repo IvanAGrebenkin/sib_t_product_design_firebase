@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Screens/auth_screen.dart';
 import 'Screens/consent_to_use.dart';
+import 'Screens/group_selection_screen.dart';
 
 void main() {
   runApp(const SibTProductDesignApp());
@@ -24,7 +25,7 @@ class _SibTProductDesignAppState extends State<SibTProductDesignApp> {
       routes: {
         '/': (context) => const AuthScreen(),
         '/consent_to_use': (context) => const ConsentToUse(),
-        // '/drop_down_button': (context) => const MyDropdownButton(),
+        '/group_selection_screen': (context) => const GroupSelectionScreen(),
         // PassArgumentsScreen.routeName: (context) => const PassArgumentsScreen(),
         // '/drawing_screen': (context) => const DrawingScreen(),
       },

@@ -11,7 +11,7 @@ class ConsentToUse extends StatefulWidget {
 class _ConsentToUseState extends State<ConsentToUse> {
 
   bool confirm = false;
-
+  bool _isDisable = true;// Переменная активности второго списка
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,8 +22,11 @@ class _ConsentToUseState extends State<ConsentToUse> {
             CheckboxListTile(
               controlAffinity: ListTileControlAffinity.leading,
               value: confirm,
-              onChanged: (value) {
-                setState(() {confirm = !confirm;});
+              onChanged: (value) {setState(() {
+                confirm = !confirm;
+                if(confirm==false){_isDisable = true;}
+                else{_isDisable = false;}
+                });
               },
               title: const Text('Я принимаю условия данного соглашения'),
             ),
@@ -33,7 +36,9 @@ class _ConsentToUseState extends State<ConsentToUse> {
               height:42,
               child: ElevatedButton(
                 style: elevatedButtonDecoration,
-                onPressed: (){},
+                onPressed: _isDisable? null : (){Navigator.pushNamed(context, '/group_selection_screen');},
+                // onPressed: (){Navigator.pushNamed(context, '/group_selection_screen');},
+
                 child: const Text('Поехали!',
                   style: TextStyle(
                     fontSize: 18,
