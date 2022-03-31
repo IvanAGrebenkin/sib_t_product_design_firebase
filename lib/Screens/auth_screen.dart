@@ -19,7 +19,7 @@ class AuthScreen extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  const SizedBox(height: 100),// Отступ
+                  const Expanded(child: SizedBox()),// Отступ
                   SizedBox(
                       width: 165,
                       height: 105,
