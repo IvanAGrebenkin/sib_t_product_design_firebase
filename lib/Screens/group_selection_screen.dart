@@ -20,7 +20,7 @@ class _GroupSelectionScreenState extends State<GroupSelectionScreen> {
           child: Center(
             child: Column(
               children: [
-                Expanded(child: const SizedBox(height: 20,)),
+                const Expanded(child: SizedBox(height: 20,)),
                 SizedBox(height: 126,width: 178,
                   child: ElevatedButton(
                     style: groupButtonDecoration,
@@ -46,7 +46,7 @@ class _GroupSelectionScreenState extends State<GroupSelectionScreen> {
                     onPressed: (){},
                     child: Column(
                       children: [
-                        Expanded(child: Image.asset ('assets/images/pan_group.png',),),
+                        Expanded(child: Image.asset ('assets/images/kettle_group.png',),),
                         const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text('Чайники',
@@ -65,7 +65,7 @@ class _GroupSelectionScreenState extends State<GroupSelectionScreen> {
                     onPressed: (){},
                     child: Column(
                       children: [
-                        Expanded(child: Image.asset ('assets/images/pan_group.png',),),
+                        Expanded(child: Image.asset ('assets/images/household_items_group.png',),),
                         const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text('Хозяйственные изделия',
@@ -84,7 +84,7 @@ class _GroupSelectionScreenState extends State<GroupSelectionScreen> {
                     onPressed: (){},
                     child: Column(
                       children: [
-                        Expanded(child: Image.asset ('assets/images/pan_group.png',),),
+                        Expanded(child: Image.asset ('assets/images/flat_items_group.png',),),
                         const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text('Плоские изделия',
@@ -96,7 +96,7 @@ class _GroupSelectionScreenState extends State<GroupSelectionScreen> {
                     ),
                   ),
                 ),// Кнопка выбора группы Плоские изделия
-                Expanded(child: const SizedBox(height: 20,)),
+                const Expanded(child: SizedBox(height: 20,)),
               ],
             ),
           ),
