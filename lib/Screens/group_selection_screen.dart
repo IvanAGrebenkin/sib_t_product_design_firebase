@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../Utils/decoration.dart';
+import '../Utils/widgets.dart';
 
 class GroupSelectionScreen extends StatefulWidget {
   const GroupSelectionScreen({Key? key}) : super(key: key);
@@ -10,11 +11,14 @@ class GroupSelectionScreen extends StatefulWidget {
 }
 
 class _GroupSelectionScreenState extends State<GroupSelectionScreen> {
+  get pageName => 'Выбор группы изделий';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar:AppBar(),
+        appBar: homePageAppBar(context, pageName),
+        drawer: navDrawer(context),
         body: Container(
           decoration: backgroundOfOthersScreen,
           child: Center(
