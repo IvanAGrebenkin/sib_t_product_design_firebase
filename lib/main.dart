@@ -7,7 +7,6 @@ void main() {
   runApp(const SibTProductDesignApp());
   // runApp(const AuthScreen());
   // runApp(const ConsentToUse());
-  //
 }
 
 class SibTProductDesignApp extends StatefulWidget {
