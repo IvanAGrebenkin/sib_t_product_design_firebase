@@ -15,7 +15,7 @@ class AuthScreen extends StatelessWidget {
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                     alignment: Alignment.bottomCenter,
-                    image: AssetImage('assets/images/sibt_auth_ background.png'),
+                    image: AssetImage('assets/images/sibt_auth_background.png'),
                     fit: BoxFit.fitWidth,
                   ),// Задний фон
                 ),
