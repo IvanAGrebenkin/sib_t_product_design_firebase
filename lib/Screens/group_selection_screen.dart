@@ -20,20 +20,19 @@ class _GroupSelectionScreenState extends State<GroupSelectionScreen> {
             child: Column(
               children: [
                 const SizedBox(height: 100,),
-                SizedBox(height: 150,width: 300,
+                SizedBox(height: 147,width: 208,
                   child: ElevatedButton(
-                    style:ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                    ),
+                    style: groupButtonDecoration,
                     onPressed: (){},
                     child: Column(
                       children: [
-                        Expanded(child: Image.asset ('assets/images/logo SibTov.png',),),
+                        Expanded(child: Image.asset ('assets/images/pan_group.png',),),
                         const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text('Кастрюли',
                             style: TextStyle(
-                              color: Colors.blueAccent,
+                              fontSize: 16,
+                              color: Color(0xff0079D0),
                             ),
                           ),
                         ),

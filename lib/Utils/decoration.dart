@@ -22,3 +22,10 @@ const backgroundOfOthersScreen = BoxDecoration(
   fit: BoxFit.fill,
   ),// Задний фон
 );
+
+final groupButtonDecoration= ElevatedButton.styleFrom(
+  primary: Colors.white,
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(25.0),
+  ),
+);// Оформление кнопок страницы выбора группы изделий
