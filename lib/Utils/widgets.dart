@@ -54,7 +54,7 @@ Widget navDrawer(context) => Drawer(
   child: Column(
     mainAxisAlignment: MainAxisAlignment.start,
     children: [
-      const SizedBox(height: 80,),
+      const SizedBox(height: 50,),
       SizedBox(
         width: 165,
         height: 105,
