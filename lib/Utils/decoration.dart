@@ -29,3 +29,5 @@ final groupButtonDecoration= ElevatedButton.styleFrom(
     borderRadius: BorderRadius.circular(25.0),
   ),
 );// Оформление кнопок страницы выбора группы изделий
+
+const groupSelectionButtonTextStyle = TextStyle(fontSize: 15,color: Color(0xff0079D0),);
