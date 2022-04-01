@@ -22,6 +22,11 @@ class _PanSelectionState extends State<PanSelection> {
   String panTypeValue = '...';// Переменная для хранения выбранного значения в списке группы изделий
   String panShapeValue = '...';// Переменная для хранения выбранного значения в списке формы корпуса
   String panSizeValue = '...';// Переменная для хранения выбранного значения в списке вместимости изделия
+  String firstArt = '';
+  String secondArt = '';
+  String thirdArt = '';
+  String b = '';
+
 
   @override
   Widget build(BuildContext context) {
@@ -65,14 +70,16 @@ class _PanSelectionState extends State<PanSelection> {
                           panSizeValue = '...';
                           _isPanShapeDisable = false;
                           _isPanSizeDisable= true;
-                          _isButtonVisible=false;}
+                          _isButtonVisible=false;
+                          firstArt ='M';}
                         else if (newValue == 'Кастрюля без ободка'){
                           panShapeList=typesOfPanWithoutRimShapesList;
                           panShapeValue = '...';
                           panSizeValue = '...';
                           _isPanShapeDisable = false;
                           _isPanSizeDisable= true;
-                          _isButtonVisible=false;}
+                          _isButtonVisible=false;
+                          firstArt ='1';}
                       });},
                     ),// Список выбора типа кастрюли
                     const SizedBox(height: 50,),
@@ -95,32 +102,39 @@ class _PanSelectionState extends State<PanSelection> {
                             panSizeList=panCylindricalWithRimSizeList;
                             panSizeValue = '...';
                             _isPanSizeDisable = false;
-                            _isButtonVisible=false;}
+                            _isButtonVisible=false;
+                            secondArt = 'D';}
                           else if (panTypeValue == 'Кастрюля с ободком' && panShapeValue == 'Сферическая'){
                             panSizeList=panSphericalWithRimSizeList;
                             panSizeValue = '...';
                             _isPanSizeDisable = false;
-                            _isButtonVisible=false;}
+                            _isButtonVisible=false;
+                            secondArt = 'S';}
                           else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Цилиндрическая'){
                             panSizeList=panCylindricalWithoutRimSizeList;
                             panSizeValue = '...';
                             _isPanSizeDisable = false;
-                            _isButtonVisible=false;}
+                            _isButtonVisible=false;
+                            secondArt = '6';}
                           else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Сферическая'){
                             panSizeList=panSphericalWithoutRimSizeList;
                             panSizeValue = '...';
                             _isPanSizeDisable = false;
-                            _isButtonVisible=false;}
+                            _isButtonVisible=false;
+                            secondArt = '9';}
                           else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Грушевидная'){
                             panSizeList=panPearShapedWithoutRimSizeList;
                             panSizeValue = '...';
                             _isPanSizeDisable = false;
-                            _isButtonVisible=false;}
+                            _isButtonVisible=false;
+                            firstArt = '2';
+                            secondArt = '5';}
                           else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Позница'){
                             panSizeList=poznicaSizeList;
                             panSizeValue = '...';
                             _isPanSizeDisable = false;
-                            _isButtonVisible=false;}
+                            _isButtonVisible=false;
+                            secondArt = '7';}
                         });
                       },
                     ),// Список выбора формы корпуса
@@ -153,7 +167,7 @@ class _PanSelectionState extends State<PanSelection> {
                       visible: _isButtonVisible,
                       child: SizedBox(width:250, height:55,
                         child: ElevatedButton(
-                          onPressed: () {
+                          onPressed: () {b=firstArt+secondArt+thirdArt;
                             Navigator.pushNamed(
                               context,
                               PanDrawingSelectionScreen.routeName,
@@ -161,6 +175,10 @@ class _PanSelectionState extends State<PanSelection> {
                                 panTypeValue,
                                 panShapeValue,
                                 panSizeValue,
+                                firstArt,
+                                secondArt,
+                                thirdArt,
+                                b,
                               ),
                             );
                           },

@@ -6,8 +6,12 @@ class PassedArguments {
   final String panTypeValue;
   final String panShapeValue;
   final String panSizeValue;
+  final String firstArt;
+  final String secondArt;
+  final String thirdArt;
+  final String b;
 
-  PassedArguments(this.panTypeValue, this.panShapeValue, this.panSizeValue,);
+  PassedArguments(this.panTypeValue, this.panShapeValue, this.panSizeValue,this.firstArt,this.secondArt,this.thirdArt,this.b,);
 }
 
 class PanDrawingSelectionScreen extends StatelessWidget {
@@ -16,6 +20,7 @@ class PanDrawingSelectionScreen extends StatelessWidget {
 
 
   static const routeName = '/pan_drawing_selection_screen';// Маршрут куда передаются аргументы
+
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +39,10 @@ class PanDrawingSelectionScreen extends StatelessWidget {
               Text('Выбрана форма: ${args.panShapeValue}'),// Вывод формы кастрюли
               const SizedBox(height:20,),
               Text('Выбрана вместимость: ${args.panSizeValue}'),// Вывод формы кастрюли
+              const SizedBox(height:20,),
+              Text('Артикул изделия: ${args.firstArt}${args.secondArt}${args.thirdArt}'),// Вывод артикула
+              const SizedBox(height:20,),
+              Text('Артикул изделия: ${args.b}'),// Вывод артикула
             ]
         ),
       ),
