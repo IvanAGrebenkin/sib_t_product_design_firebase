@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import '../Utils/decoration.dart';
-import '../Utils/widgets.dart';
+import '../../Utils/decoration.dart';
+import '../../Utils/widgets.dart';
 
-class PanSelection extends StatefulWidget {
-  const PanSelection({Key? key}) : super(key: key);
+class KettleSelection extends StatefulWidget {
+  const KettleSelection({Key? key}) : super(key: key);
   @override
-  State<PanSelection> createState() => _PanSelectionState();
+  State<KettleSelection> createState() => _KettleSelectionState();
 }
 
-class _PanSelectionState extends State<PanSelection> {
-  get pageName => 'Кастрюли';
+class _KettleSelectionState extends State<KettleSelection> {
+  get pageName => 'Чайники';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,7 +23,7 @@ class _PanSelectionState extends State<PanSelection> {
               child: Column(
                 children: [
                   SizedBox(height: 50,),
-                  Text('Страница выбора кастрюль'),
+                  Text('Страница выбора чайников'),
                   SizedBox(height: 800,),
                 ],
               ),

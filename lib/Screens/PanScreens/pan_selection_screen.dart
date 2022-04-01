@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import '../Utils/decoration.dart';
-import '../Utils/widgets.dart';
+import '../../Utils/decoration.dart';
+import '../../Utils/widgets.dart';
 
-class HouseholdItemsSelection extends StatefulWidget {
-  const HouseholdItemsSelection({Key? key}) : super(key: key);
+class PanSelection extends StatefulWidget {
+  const PanSelection({Key? key}) : super(key: key);
   @override
-  State<HouseholdItemsSelection> createState() => _HouseholdItemsSelectionState();
+  State<PanSelection> createState() => _PanSelectionState();
 }
 
-class _HouseholdItemsSelectionState extends State<HouseholdItemsSelection> {
-  get pageName => 'Хозяйственные\n изделия';
+class _PanSelectionState extends State<PanSelection> {
+  get pageName => 'Кастрюли';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,7 +23,7 @@ class _HouseholdItemsSelectionState extends State<HouseholdItemsSelection> {
               child: Column(
                 children: [
                   SizedBox(height: 50,),
-                  Text('Страница выбора хозяйственных изделий'),
+                  Text('Страница выбора кастрюль'),
                   SizedBox(height: 800,),
                 ],
               ),

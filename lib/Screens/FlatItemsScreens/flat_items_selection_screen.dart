@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../Utils/decoration.dart';
-import '../Utils/widgets.dart';
+import '../../Utils/decoration.dart';
+import '../../Utils/widgets.dart';
 
 class FlatItemsSelection extends StatefulWidget {
   const FlatItemsSelection({Key? key}) : super(key: key);

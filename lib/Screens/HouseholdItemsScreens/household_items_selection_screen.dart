@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import '../Utils/decoration.dart';
-import '../Utils/widgets.dart';
+import '../../Utils/decoration.dart';
+import '../../Utils/widgets.dart';
 
-class KettleSelection extends StatefulWidget {
-  const KettleSelection({Key? key}) : super(key: key);
+class HouseholdItemsSelection extends StatefulWidget {
+  const HouseholdItemsSelection({Key? key}) : super(key: key);
   @override
-  State<KettleSelection> createState() => _KettleSelectionState();
+  State<HouseholdItemsSelection> createState() => _HouseholdItemsSelectionState();
 }
 
-class _KettleSelectionState extends State<KettleSelection> {
-  get pageName => 'Чайники';
+class _HouseholdItemsSelectionState extends State<HouseholdItemsSelection> {
+  get pageName => 'Хозяйственные\n изделия';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,7 +23,7 @@ class _KettleSelectionState extends State<KettleSelection> {
               child: Column(
                 children: [
                   SizedBox(height: 50,),
-                  Text('Страница выбора чайников'),
+                  Text('Страница выбора хозяйственных изделий'),
                   SizedBox(height: 800,),
                 ],
               ),

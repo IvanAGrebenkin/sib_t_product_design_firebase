@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'Screens/auth_screen.dart';
 import 'Screens/consent_to_use.dart';
-import 'Screens/flat_items_selection_screen.dart';
+import 'Screens/FlatItemsScreens/flat_items_selection_screen.dart';
 import 'Screens/group_selection_screen.dart';
-import 'Screens/household_items_selection_screen.dart';
-import 'Screens/kettle_selection_screen.dart';
-import 'Screens/pan_selection_screen.dart';
+import 'Screens/HouseholdItemsScreens/household_items_selection_screen.dart';
+import 'Screens/KettleScreens/kettle_selection_screen.dart';
+import 'Screens/PanScreens/pan_selection_screen.dart';
 
 void main() {
   runApp(const SibTProductDesignApp());
