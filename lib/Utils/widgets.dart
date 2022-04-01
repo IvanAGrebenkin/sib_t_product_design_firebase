@@ -10,14 +10,14 @@ PreferredSizeWidget homePageAppBar(context, pageName) => AppBar(
           tooltip: 'Открыть меню навигации',
         );
       },
-    ),
+    ),// Кнопка "Бургер" для открытия Drawer
     title: Center(
         child: Text('$pageName',
           style: const TextStyle(
             fontSize: 20,
           ),
       )
-    ),
+    ),// Заголовок страницы
 );// AppBar для страницы выбора группы
 
 PreferredSizeWidget nextPageAppBar(context, pageName) => AppBar(
@@ -29,96 +29,104 @@ PreferredSizeWidget nextPageAppBar(context, pageName) => AppBar(
           tooltip: 'Открыть меню навигации',
         );
       },
-    ),
+    ),// Кнопка "Бургер" для открытия Drawer
     title: Center(
         child: Text('$pageName',
           style: const TextStyle(
             fontSize: 18,
           ),
         )
-    ),
+    ),// Заголовок страницы
     actions: <Widget>[
       IconButton(
         tooltip: 'На начальную страницу',
-        onPressed: (){Navigator.pushNamed(context, '/');},
-        icon: const Icon(Icons.home),),// Кнопка перехода на главный экран
+        onPressed: (){Navigator.pushNamed(context, '/group_selection_screen');},
+        icon: const Icon(Icons.home),),// Кнопка перехода на экран выбора группы
       IconButton(
         tooltip: 'На предыдущую страницу',
         onPressed: (){Navigator.pop(context);},
-        icon: const Icon(Icons.arrow_back),),// Кнопка перехода на главный экран
+        icon: const Icon(Icons.arrow_back),),// Кнопка перехода на предыдущую страницу
     ]
 );// AppBar для последующих страниц
 
-
 Widget navDrawer(context) => Drawer(
-  child: Column(
-    mainAxisAlignment: MainAxisAlignment.start,
-    children: [
-      const SizedBox(height: 50,),
-      SizedBox(
-        width: 165,
-        height: 105,
-        child: Image.asset ('assets/images/logo SibTov.png')),//Логотип "Сибирские товары"
-      const SizedBox(height: 15,),
-      const Divider(
-        thickness: 2,
+  child: SingleChildScrollView(
+    child: ConstrainedBox(
+      constraints: BoxConstraints(
+        minWidth: MediaQuery.of(context).size.width,
+        minHeight: MediaQuery.of(context).size.height,
+      ),// Ограничения в соответствии с разрешением экрана устройства
+      child: IntrinsicHeight(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            const SizedBox(height: 50,),// Отступ по вертикали
+            SizedBox(
+              width: 165,
+              height: 105,
+              child: Image.asset ('assets/images/logo SibTov.png')),//Логотип "Сибирские товары"
+            const SizedBox(height: 15,),// Отступ по вертикали
+            const Divider(
+              thickness: 2,
+            ),// Линия-разделитель
+            ListTile(
+              leading: SizedBox(
+                child: Image.asset ('assets/images/pan_group.png',),
+              ),
+              title: const Padding(
+                padding: EdgeInsets.only(left: 40.0),
+                child: Text('Кастрюли',),
+              ),
+              onTap: (){},
+            ),// Кнопка перехода к списку кастрюль
+            ListTile(
+              leading: SizedBox(
+                child: Image.asset ('assets/images/kettle_group.png',),
+              ),
+              title: const Padding(
+                padding: EdgeInsets.only(left: 38.0),
+                child: Text('Чайники'),
+              ),
+              onTap: (){},
+            ),// Кнопка перехода к списку чайников
+            ListTile(
+              leading: SizedBox(
+                child: Image.asset ('assets/images/household_items_group.png',),
+              ),
+              title: const Padding(
+                padding: EdgeInsets.only(left: 22.0),
+                child: Text('Хозяйственные изделия'),
+              ),
+              onTap: (){},
+            ),// Кнопка перехода к к списку хозяйственных изделий
+            ListTile(
+              leading: SizedBox(
+                child: Image.asset ('assets/images/flat_items_group.png',),
+              ),
+              title: const Padding(
+                padding: EdgeInsets.only(left: 45.0),
+                child: Text('Плоские изделия'),
+              ),
+              onTap: (){},
+            ),// Кнопка перехода к к списку плоских изделий
+            const Divider(
+              thickness: 2,
+            ),// Линия-разделитель
+            ListTile(
+              leading: const Icon(Icons.exit_to_app,
+                color: Colors.blueAccent,),
+              title: const Text('Закрыть приложение'),
+              onTap: (){SystemChannels.platform.invokeMethod('SystemNavigator.pop');},
+            ),// Кнопка выхода из приложения
+            const Divider(
+              thickness: 2,
+            ),// Линия-разделитель
+            const Expanded(child: SizedBox()),
+            SizedBox(
+                child: Image.asset ('assets/images/sibt_auth_background.png')),//Фоновое изображение
+          ],
+        ),
       ),
-      ListTile(
-        leading: SizedBox(
-          child: Image.asset ('assets/images/pan_group.png',),
-        ),
-        title: const Padding(
-          padding: EdgeInsets.only(left: 40.0),
-          child: Text('Кастрюли',),
-        ),
-        onTap: (){},
-      ),// Кнопка перехода к списку кастрюль
-      ListTile(
-        leading: SizedBox(
-          child: Image.asset ('assets/images/kettle_group.png',),
-        ),
-        title: const Padding(
-          padding: EdgeInsets.only(left: 38.0),
-          child: Text('Чайники'),
-        ),
-        onTap: (){},
-      ),// Кнопка перехода к списку чайников
-      ListTile(
-        leading: SizedBox(
-          child: Image.asset ('assets/images/household_items_group.png',),
-        ),
-        title: const Padding(
-          padding: EdgeInsets.only(left: 22.0),
-          child: Text('Хозяйственные изделия'),
-        ),
-        onTap: (){},
-      ),// Кнопка перехода к к списку хозяйственных изделий
-      ListTile(
-        leading: SizedBox(
-          child: Image.asset ('assets/images/flat_items_group.png',),
-        ),
-        title: const Padding(
-          padding: EdgeInsets.only(left: 45.0),
-          child: Text('Плоские изделия'),
-        ),
-        onTap: (){},
-      ),// Кнопка перехода к к списку плоских изделий
-      const Divider(
-        thickness: 2,
-      ),
-      ListTile(
-        leading: const Icon(Icons.exit_to_app,
-          color: Colors.blueAccent,),
-        title: const Text('Закрыть приложение'),
-        onTap: (){SystemChannels.platform.invokeMethod('SystemNavigator.pop');},
-      ),// Кнопка выхода из приложения
-      const Divider(
-        thickness: 2,
-      ),
-      Expanded(child: const SizedBox()),
-      SizedBox(
-          child: Image.asset ('assets/images/sibt_auth_background.png')),//Фоновое изображение
-
-    ],
-  ),
-);
+    ),// Виджет для задания габаритов
+  ),// Скроллинг внутри панели
+);// Выдвигающаяся панель Drawer

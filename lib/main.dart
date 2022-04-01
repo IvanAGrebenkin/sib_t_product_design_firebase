@@ -20,14 +20,12 @@ class _SibTProductDesignAppState extends State<SibTProductDesignApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Trial Work',
+      title: 'SibTProductDesignApp',
       initialRoute: '/',
       routes: {
         '/': (context) => const AuthScreen(),
         '/consent_to_use': (context) => const ConsentToUse(),
         '/group_selection_screen': (context) => const GroupSelectionScreen(),
-        // PassArgumentsScreen.routeName: (context) => const PassArgumentsScreen(),
-        // '/drawing_screen': (context) => const DrawingScreen(),
       },
     );
   }

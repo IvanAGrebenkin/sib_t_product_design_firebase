@@ -3,7 +3,6 @@ import '../Utils/decoration.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,17 +13,17 @@ class AuthScreen extends StatelessWidget {
             constraints: BoxConstraints(
               minWidth: MediaQuery.of(context).size.width,
               minHeight: MediaQuery.of(context).size.height,
-            ),
+            ),// Ограничения в соответствии с разрешением экрана устройства
             child: IntrinsicHeight(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  const Expanded(child: SizedBox()),// Отступ
+                  const Expanded(child: SizedBox()),// Отступ по вертикали
                   SizedBox(
                       width: 165,
                       height: 105,
                       child: Image.asset ('assets/images/logo SibTov.png')),//Логотип "Сибирские товары"
-                  const SizedBox(height: 35),// Отступ
+                  const SizedBox(height: 35),// Отступ по вертикали
                   SizedBox(width: 244, height: 40,
                     child: TextFormField(
                       decoration: const InputDecoration(
@@ -35,7 +34,7 @@ class AuthScreen extends StatelessWidget {
                         labelText: 'Логин',),
                     ),
                   ),// Поле ввода Логина
-                  const SizedBox(height: 40),// Отступ
+                  const SizedBox(height: 40),// Отступ по вертикали
                   SizedBox(width: 244, height: 40,
                     child: TextFormField(
                       decoration: const InputDecoration(
@@ -46,27 +45,27 @@ class AuthScreen extends StatelessWidget {
                         labelText: 'Пароль',),
                     ),
                   ),// Поле ввода Пароля
-                  const SizedBox(height: 40),// Отступ
+                  const SizedBox(height: 40),// Отступ по вертикали
                   SizedBox(
                     width:154,
                     height:42,
                     child: ElevatedButton(
-                      style: elevatedButtonDecoration,
-                      onPressed: (){Navigator.pushNamed(context, '/consent_to_use');},
+                      style: elevatedButtonDecoration,// Оформление кнопки
+                      onPressed: (){Navigator.pushNamed(context, '/consent_to_use');},// Действие по нажатию
                       child: const Text('Войти',
                         style: TextStyle(
                           fontSize: 18,
-                        ),
-                      ),
+                        ),// Стиль текста
+                      ),// Текст внутри кнопки
                     ),
-                  ),
-                  const Expanded(child: SizedBox()),// Отступ
-                  SizedBox(child: Image.asset ('assets/images/sibt_auth_background.png')),// фоновый рисунок
+                  ),// Кнопка "Войти"
+                  const Expanded(child: SizedBox()),// Отступ по вертикали
+                  SizedBox(child: Image.asset ('assets/images/sibt_auth_background.png')),// Фоновый рисунок
                 ],
               ),
             ),
-          ),
-        ),
+          ),// Виджет для задания габаритов
+        ),// Скроллинг страницы
       ),
     );
   }

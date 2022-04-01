@@ -3,13 +3,11 @@ import 'package:sib_t_product_design/Utils/decoration.dart';
 
 class ConsentToUse extends StatefulWidget {
   const ConsentToUse({Key? key}) : super(key: key);
-
   @override
   State<ConsentToUse> createState() => _ConsentToUseState();
 }
 
 class _ConsentToUseState extends State<ConsentToUse> {
-
   bool confirm = false;
   bool _isDisable = true;// Переменная активности второго списка
   @override
@@ -17,12 +15,12 @@ class _ConsentToUseState extends State<ConsentToUse> {
     return MaterialApp(
       home: Scaffold(
         body: Container(
-          decoration: backgroundOfOthersScreen,
+          decoration: backgroundOfOthersScreen,// Задание фонового изображения
           child: Column(
             children: [
-              const SizedBox(height: 200,),
+              const SizedBox(height: 200,),// Отступ по вертикали
               CheckboxListTile(
-                controlAffinity: ListTileControlAffinity.leading,
+                controlAffinity: ListTileControlAffinity.leading,// Расположение Checkbox перед описанием
                 value: confirm,
                 onChanged: (value) {setState(() {
                   confirm = !confirm;
@@ -30,24 +28,22 @@ class _ConsentToUseState extends State<ConsentToUse> {
                   else{_isDisable = false;}
                   });
                 },
-                title: const Text('Я принимаю условия данного соглашения'),
-              ),
-              const SizedBox(height: 30,),// Отступ
+                title: const Text('Я принимаю условия данного соглашения'),// Текст описания
+              ),// CheckBox с описанием
+              const SizedBox(height: 30,),// Отступ по вертикали
               SizedBox(
                 width:154,
                 height:42,
                 child: ElevatedButton(
-                  style: elevatedButtonDecoration,
-                  onPressed: _isDisable? null : (){Navigator.pushNamed(context, '/group_selection_screen');},
-                  // onPressed: (){Navigator.pushNamed(context, '/group_selection_screen');},
-
+                  style: elevatedButtonDecoration,// Оформление кнопки
+                  onPressed: _isDisable? null : (){Navigator.pushNamed(context, '/group_selection_screen');},// Действие по нажатию
                   child: const Text('Поехали!',
                     style: TextStyle(
                       fontSize: 18,
-                    ),
-                  ),
+                    ),// Стиль текста
+                  ),// Текст внутри кнопки
                 ),
-              ),// Кнопка 'Поехали!'
+              ),// Активируемая/деактивируемая кнопка 'Поехали!'
             ],
           ),
         ),
