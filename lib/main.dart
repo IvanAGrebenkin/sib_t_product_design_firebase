@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Screens/PanScreens/pan_drawing_selection_screen.dart';
 import 'Screens/auth_screen.dart';
 import 'Screens/consent_to_use.dart';
 import 'Screens/FlatItemsScreens/flat_items_selection_screen.dart';
@@ -35,6 +36,8 @@ class _SibTProductDesignAppState extends State<SibTProductDesignApp> {
         '/kettle_selection_screen': (context) => const KettleSelection(),
         '/household_items_selection_screen': (context) => const HouseholdItemsSelection(),
         '/flat_items_selection_screen': (context) => const FlatItemsSelection(),
+        PassArgumentsScreen.routeName: (context) => const PassArgumentsScreen(),
+
       },
     );
   }
