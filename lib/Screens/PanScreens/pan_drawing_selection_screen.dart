@@ -3,14 +3,15 @@ import '../../Utils/widgets.dart';
 
 // Класс для объявления передаваемых аргумнтов
 class PassedArguments {
-  final String firstArgument;
-  final String secondArgument;
+  final String panTypeValue;
+  final String panShapeValue;
+  final String panSizeValue;
 
-  PassedArguments(this.firstArgument, this.secondArgument);
+  PassedArguments(this.panTypeValue, this.panShapeValue, this.panSizeValue,);
 }
 
-class PassArgumentsScreen extends StatelessWidget {
-  const PassArgumentsScreen({Key? key}) : super(key: key);
+class PanDrawingSelectionScreen extends StatelessWidget {
+  const PanDrawingSelectionScreen({Key? key}) : super(key: key);
   get pageName => 'Выберите чертеж кастрюли';// Заголовок для AppBar
 
 
@@ -27,10 +28,12 @@ class PassArgumentsScreen extends StatelessWidget {
       body: Center(
         child: Column(
             children: [
-              const SizedBox(height:40,),
-              Text('Значение 1го переданного аргумента: ${args.firstArgument}'),// Вывод передаваемого аргумента
-              const SizedBox(height:40,),
-              Text('Значение 2го переданного аргумента: ${args.secondArgument}'),// Вывод передаваемого аргумента
+              const SizedBox(height:20,),
+              Text('Выбран тип: ${args.panTypeValue}'),// Вывод типа кастрюли
+              const SizedBox(height:20,),
+              Text('Выбрана форма: ${args.panShapeValue}'),// Вывод формы кастрюли
+              const SizedBox(height:20,),
+              Text('Выбрана вместимость: ${args.panSizeValue}'),// Вывод формы кастрюли
             ]
         ),
       ),

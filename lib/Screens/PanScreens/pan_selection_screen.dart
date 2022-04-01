@@ -41,7 +41,7 @@ class _PanSelectionState extends State<PanSelection> {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    const Expanded(child: SizedBox(height: 50,)),// Отступ по вертикали
+                    const SizedBox(height: 50,),// Отступ по вертикали
                     const Text('Выберите тип кастрюли:'),
                     DropdownButton(
                       value: panTypeValue,
@@ -156,10 +156,11 @@ class _PanSelectionState extends State<PanSelection> {
                           onPressed: () {
                             Navigator.pushNamed(
                               context,
-                              PassArgumentsScreen.routeName,
+                              PanDrawingSelectionScreen.routeName,
                               arguments: PassedArguments(
                                 panTypeValue,
                                 panShapeValue,
+                                panSizeValue,
                               ),
                             );
                           },
