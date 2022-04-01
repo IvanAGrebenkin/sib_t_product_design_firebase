@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'Screens/auth_screen.dart';
 import 'Screens/consent_to_use.dart';
 import 'Screens/group_selection_screen.dart';
+import 'Screens/pan_selection_screen.dart';
 
 void main() {
   runApp(const SibTProductDesignApp());
   // runApp(const AuthScreen());
   // runApp(const ConsentToUse());
+  // runApp(const PanSelection());
 }
 
 class SibTProductDesignApp extends StatefulWidget {
@@ -26,6 +28,7 @@ class _SibTProductDesignAppState extends State<SibTProductDesignApp> {
         '/': (context) => const AuthScreen(),
         '/consent_to_use': (context) => const ConsentToUse(),
         '/group_selection_screen': (context) => const GroupSelectionScreen(),
+        '/pan_selection_screen': (context) => const PanSelection(),
       },
     );
   }

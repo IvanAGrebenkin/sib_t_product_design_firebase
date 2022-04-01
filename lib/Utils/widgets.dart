@@ -77,7 +77,7 @@ Widget navDrawer(context) => Drawer(
                 padding: EdgeInsets.only(left: 40.0),
                 child: Text('Кастрюли',),
               ),
-              onTap: (){},
+              onTap: (){Navigator.pushNamed(context, '/pan_selection_screen');},
             ),// Кнопка перехода к списку кастрюль
             ListTile(
               leading: SizedBox(
