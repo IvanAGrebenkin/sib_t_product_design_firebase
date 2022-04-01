@@ -32,6 +32,7 @@ PreferredSizeWidget nextPageAppBar(context, pageName) => AppBar(
     ),// Кнопка "Бургер" для открытия Drawer
     title: Center(
         child: Text('$pageName',
+          textAlign:TextAlign.center ,
           style: const TextStyle(
             fontSize: 18,
           ),
@@ -87,7 +88,7 @@ Widget navDrawer(context) => Drawer(
                 padding: EdgeInsets.only(left: 38.0),
                 child: Text('Чайники'),
               ),
-              onTap: (){},
+              onTap: (){Navigator.pushNamed(context, '/kettle_selection_screen');},
             ),// Кнопка перехода к списку чайников
             ListTile(
               leading: SizedBox(
@@ -97,7 +98,7 @@ Widget navDrawer(context) => Drawer(
                 padding: EdgeInsets.only(left: 22.0),
                 child: Text('Хозяйственные изделия'),
               ),
-              onTap: (){},
+              onTap: (){Navigator.pushNamed(context, '/household_items_selection_screen');},
             ),// Кнопка перехода к к списку хозяйственных изделий
             ListTile(
               leading: SizedBox(
@@ -107,7 +108,7 @@ Widget navDrawer(context) => Drawer(
                 padding: EdgeInsets.only(left: 45.0),
                 child: Text('Плоские изделия'),
               ),
-              onTap: (){},
+              onTap: (){Navigator.pushNamed(context, '/flat_items_selection_screen');},
             ),// Кнопка перехода к к списку плоских изделий
             const Divider(
               thickness: 2,

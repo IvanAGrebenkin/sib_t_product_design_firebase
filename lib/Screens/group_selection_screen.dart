@@ -45,7 +45,7 @@ class _GroupSelectionScreenState extends State<GroupSelectionScreen> {
                   SizedBox(height: 126,width: 178,
                     child: ElevatedButton(
                       style: groupButtonDecoration,
-                      onPressed: (){},
+                      onPressed: (){Navigator.pushNamed(context, '/kettle_selection_screen');},
                       child: Column(
                         children: [
                           Expanded(child: Image.asset ('assets/images/kettle_group.png',),),
@@ -64,7 +64,7 @@ class _GroupSelectionScreenState extends State<GroupSelectionScreen> {
                   SizedBox(height: 126,width: 178,
                     child: ElevatedButton(
                       style: groupButtonDecoration,
-                      onPressed: (){},
+                      onPressed: (){Navigator.pushNamed(context, '/household_items_selection_screen');},
                       child: Column(
                         children: [
                           Expanded(child: Image.asset ('assets/images/household_items_group.png',),),
@@ -83,7 +83,7 @@ class _GroupSelectionScreenState extends State<GroupSelectionScreen> {
                   SizedBox(height: 126,width: 178,
                     child: ElevatedButton(
                       style: groupButtonDecoration,
-                      onPressed: (){},
+                      onPressed: (){Navigator.pushNamed(context, '/flat_items_selection_screen');},
                       child: Column(
                         children: [
                           Expanded(child: Image.asset ('assets/images/flat_items_group.png',),),
