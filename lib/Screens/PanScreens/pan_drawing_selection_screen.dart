@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../Utils/widgets.dart';
 
 // Класс для объявления передаваемых аргумнтов
-class PassedArguments {
+class PassedFromPanSelectionScreenArguments {
   final String panTypeValue;
   final String panShapeValue;
   final String panSizeValue;
@@ -11,7 +11,7 @@ class PassedArguments {
   final String thirdArt;
   final String b;
 
-  PassedArguments(this.panTypeValue, this.panShapeValue, this.panSizeValue,this.firstArt,this.secondArt,this.thirdArt,this.b,);
+  PassedFromPanSelectionScreenArguments(this.panTypeValue, this.panShapeValue, this.panSizeValue,this.firstArt,this.secondArt,this.thirdArt,this.b,);
 }
 
 class PanDrawingSelectionScreen extends StatelessWidget {
@@ -26,7 +26,7 @@ class PanDrawingSelectionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     // Метод для доступа к класу, в котором объявлены передаваемые аргументы
-    final args = ModalRoute.of(context)!.settings.arguments as PassedArguments;
+    final args = ModalRoute.of(context)!.settings.arguments as PassedFromPanSelectionScreenArguments;
 
     return Scaffold(appBar: nextPageAppBar(context, pageName),
       drawer: navDrawer(context),

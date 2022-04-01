@@ -171,7 +171,7 @@ class _PanSelectionState extends State<PanSelection> {
                             Navigator.pushNamed(
                               context,
                               PanDrawingSelectionScreen.routeName,
-                              arguments: PassedArguments(
+                              arguments: PassedFromPanSelectionScreenArguments(
                                 panTypeValue,
                                 panShapeValue,
                                 panSizeValue,
