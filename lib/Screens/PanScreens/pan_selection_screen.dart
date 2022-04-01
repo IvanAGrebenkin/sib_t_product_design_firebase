@@ -25,7 +25,7 @@ class _PanSelectionState extends State<PanSelection> {
   String firstArt = '';
   String secondArt = '';
   String thirdArt = '';
-  String b = '';
+  String art = '';
 
 
   @override
@@ -167,7 +167,7 @@ class _PanSelectionState extends State<PanSelection> {
                       visible: _isButtonVisible,
                       child: SizedBox(width:250, height:55,
                         child: ElevatedButton(
-                          onPressed: () {b=firstArt+secondArt+thirdArt;
+                          onPressed: () {art=firstArt+secondArt+thirdArt;
                             Navigator.pushNamed(
                               context,
                               PanDrawingSelectionScreen.routeName,
@@ -178,7 +178,7 @@ class _PanSelectionState extends State<PanSelection> {
                                 firstArt,
                                 secondArt,
                                 thirdArt,
-                                b,
+                                art,
                               ),
                             );
                           },

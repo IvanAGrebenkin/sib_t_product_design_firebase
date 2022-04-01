@@ -9,9 +9,9 @@ class PassedFromPanSelectionScreenArguments {
   final String firstArt;
   final String secondArt;
   final String thirdArt;
-  final String b;
+  final String art;
 
-  PassedFromPanSelectionScreenArguments(this.panTypeValue, this.panShapeValue, this.panSizeValue,this.firstArt,this.secondArt,this.thirdArt,this.b,);
+  PassedFromPanSelectionScreenArguments(this.panTypeValue, this.panShapeValue, this.panSizeValue,this.firstArt,this.secondArt,this.thirdArt,this.art,);
 }
 
 class PanDrawingSelectionScreen extends StatelessWidget {
@@ -42,7 +42,7 @@ class PanDrawingSelectionScreen extends StatelessWidget {
               const SizedBox(height:20,),
               Text('Артикул изделия: ${args.firstArt}${args.secondArt}${args.thirdArt}'),// Вывод артикула
               const SizedBox(height:20,),
-              Text('Артикул изделия: ${args.b}'),// Вывод артикула
+              Text('Артикул изделия: ${args.art}'),// Вывод артикула
             ]
         ),
       ),
