@@ -16,10 +16,9 @@ class _PanSelectionState extends State<PanSelection> {
   // Переменне
   bool _isDisable=true;// Переменная активности второго списка
   bool isVisible = false;// Переменная видимости кнопки
-  bool ignoreNameList = true;// Переменная для выключения списка наименования изделия
   List <String> namesList = <String>['...'];// Переменная для определения необходимого списка с наименованиями изделий
-  String groupValue = '...';// Переменная для хранения выбранного значения в списке группы изделий
-  String productNameValue = '...';// Переменная для хранения выбранного значения в списке наименования изделия
+  String panTypeValue = '...';// Переменная для хранения выбранного значения в списке группы изделий
+  String panShapeValue = '...';// Переменная для хранения выбранного значения в списке наименования изделия
 
   @override
   Widget build(BuildContext context) {
@@ -34,47 +33,44 @@ class _PanSelectionState extends State<PanSelection> {
               child: Column(
                 children: [
                   const SizedBox(height: 50,),
-                  const Text('Группа изделий:'),
+                  const Text('Выберите тип кастрюли:'),
                   DropdownButton(
-                    value: groupValue,
-                    items: groupsList.map<DropdownMenuItem<String>>((String value) {
+                    value: panTypeValue,
+                    items: listOfPanTypes.map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
                         child: Text(value),
                       );}).toList(),
                     onChanged: (String? newValue){ setState(() {
-                      groupValue = newValue!;
-                      if (newValue == '...') {productNameValue = '...'; _isDisable = true; isVisible=false;}
-                      else if (newValue == 'Кастрюли'){namesList=pans;productNameValue = '...'; _isDisable = false;isVisible=false;}
-                      else if (newValue == 'Чайники'){namesList=teapots;productNameValue = '...'; _isDisable = false;isVisible=false;}
-                      else if (newValue == 'Хозяйственные изделия'){namesList=householdProducts;productNameValue = '...'; _isDisable = false;isVisible=false;}
-                      else if (newValue == 'Плоские изделия'){namesList=flatProducts;productNameValue = '...'; _isDisable = false;isVisible=false;}
-                      // else { ignore=false;}
+                      panTypeValue = newValue!;
+                      if (newValue == '...') {panShapeValue = '...'; _isDisable = true; isVisible=false;}
+                      else if (newValue == 'Кастрюля с ободком'){namesList=typesOfPanWithRimShapesList;panShapeValue = '...'; _isDisable = false;isVisible=false;}
+                      else if (newValue == 'Кастрюля без ободка'){namesList=typesOfPanWithoutRimShapesList;panShapeValue = '...'; _isDisable = false;isVisible=false;}
                     });},
                   ),
                   const SizedBox(height: 50,),
-                  const Text('Наименование изделия:'),
+                  const Text('Выберите форму корпуса:'),
                   DropdownButton(
-                    value: productNameValue,
+                    value: panShapeValue,
                     items: namesList.map<DropdownMenuItem<String>>((String value) {return DropdownMenuItem<String>(
                       value: value,
                       child: Text(value),
                     );}).toList(),
                     onChanged: _isDisable? null : (String? newValue1){
                       setState(() {
-                        productNameValue = newValue1!;
-                        if (productNameValue == '...') {isVisible = false;}
+                        panShapeValue = newValue1!;
+                        if (panShapeValue == '...') {isVisible = false;}
                         else {isVisible = true;}
                       });
                     },
                   ),
                   const SizedBox(height: 50,),
-                  Text('Группа изделий: "$groupValue",',
+                  Text('Группа изделий: "$panTypeValue",',
                     textAlign: TextAlign.start,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 50.0),
-                    child: Text('Наименование изделия: "$productNameValue"',
+                    child: Text('Наименование изделия: "$panShapeValue"',
                       textAlign: TextAlign.center,),
                   ),
                   const SizedBox(height: 50,),
@@ -87,8 +83,8 @@ class _PanSelectionState extends State<PanSelection> {
                             context,
                             PassArgumentsScreen.routeName,
                             arguments: PassedArguments(
-                              groupValue,
-                              productNameValue,
+                              panTypeValue,
+                              panShapeValue,
                             ),
                           );
                         },
