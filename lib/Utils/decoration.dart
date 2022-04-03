@@ -17,9 +17,9 @@ final elevatedButtonDecoration= ElevatedButton.styleFrom(
 
 const backgroundOfOthersScreen = BoxDecoration(
   image: DecorationImage(
-  alignment: Alignment.bottomCenter,
-  image: AssetImage('assets/images/background_of_other_screens.png'),
-  fit: BoxFit.fill,
+    alignment: Alignment.bottomCenter,
+    image: AssetImage('assets/images/background_of_other_screens.png'),
+    fit: BoxFit.fill,
   ),// Задний фон
 );// Оформление заднего фона рабочих экранов
 
