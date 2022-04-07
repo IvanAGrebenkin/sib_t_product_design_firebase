@@ -11,7 +11,7 @@ class PanSelection extends StatefulWidget {
 }
 
 class _PanSelectionState extends State<PanSelection> {
-  get pageName => 'Кастрюли';
+  get pageName => 'Кастрюли';// Заголовок в AppBar
 
   // Переменне
   bool _isPanShapeDisable=true;// Переменная активности списка формы изделия
@@ -22,10 +22,8 @@ class _PanSelectionState extends State<PanSelection> {
   String panTypeValue = '...';// Переменная для хранения выбранного значения в списке группы изделий
   String panShapeValue = '...';// Переменная для хранения выбранного значения в списке формы корпуса
   String panSizeValue = '...';// Переменная для хранения выбранного значения в списке вместимости изделия
-  String firstArt = '';
-  String secondArt = '';
-  String thirdArt = '';
-  String art = '';
+  String art = '';// Переменная для хранения артикула выбранного изделия
+  String panName = '';// Переменная для хранения полного наименования выбранного изделия
 
 
   @override
@@ -51,35 +49,27 @@ class _PanSelectionState extends State<PanSelection> {
                     DropdownButton(
                       value: panTypeValue,
                       items: listOfPanTypes.map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );}).toList(),
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: Text(value),
+                                );}).toList(),
                       onChanged: (String? newValue){ setState(() {
                         panTypeValue = newValue!;
                         if (newValue == '...') {
                           panShapeValue = '...';
                           panSizeValue = '...';
                           _isPanShapeDisable = true;
-                          _isPanSizeDisable= true;
-                          _isButtonVisible=false;
+                          _isPanSizeDisable = true;
+                          _isButtonVisible = false;
                         }
                         else if (newValue == 'Кастрюля с ободком'){
                           panShapeList=typesOfPanWithRimShapesList;
-                          panShapeValue = '...';
-                          panSizeValue = '...';
-                          _isPanShapeDisable = false;
-                          _isPanSizeDisable= true;
-                          _isButtonVisible=false;
-                          firstArt ='M';}
+                          workWithFirstDropButton();
+                        }
                         else if (newValue == 'Кастрюля без ободка'){
                           panShapeList=typesOfPanWithoutRimShapesList;
-                          panShapeValue = '...';
-                          panSizeValue = '...';
-                          _isPanShapeDisable = false;
-                          _isPanSizeDisable= true;
-                          _isButtonVisible=false;
-                          firstArt ='1';}
+                          workWithFirstDropButton();
+                        }
                       });},
                     ),// Список выбора типа кастрюли
                     const SizedBox(height: 50,),
@@ -95,46 +85,33 @@ class _PanSelectionState extends State<PanSelection> {
                           panShapeValue = newValue1!;
                           if (panShapeValue == '...') {
                             panSizeValue = '...';
-                            _isPanSizeDisable=true;
                             _isButtonVisible = false;
+                            _isPanSizeDisable=true;
                           }
                           else if (panTypeValue == 'Кастрюля с ободком' && panShapeValue == 'Цилиндрическая'){
                             panSizeList=panCylindricalWithRimSizeList;
-                            panSizeValue = '...';
-                            _isPanSizeDisable = false;
-                            _isButtonVisible=false;
-                            secondArt = 'D';}
+                            workWithSecondDropButton();
+                          }
                           else if (panTypeValue == 'Кастрюля с ободком' && panShapeValue == 'Сферическая'){
                             panSizeList=panSphericalWithRimSizeList;
-                            panSizeValue = '...';
-                            _isPanSizeDisable = false;
-                            _isButtonVisible=false;
-                            secondArt = 'S';}
+                            workWithSecondDropButton();
+                          }
                           else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Цилиндрическая'){
                             panSizeList=panCylindricalWithoutRimSizeList;
-                            panSizeValue = '...';
-                            _isPanSizeDisable = false;
-                            _isButtonVisible=false;
-                            secondArt = '6';}
+                            workWithSecondDropButton();
+                          }
                           else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Сферическая'){
                             panSizeList=panSphericalWithoutRimSizeList;
-                            panSizeValue = '...';
-                            _isPanSizeDisable = false;
-                            _isButtonVisible=false;
-                            secondArt = '9';}
+                            workWithSecondDropButton();
+                          }
                           else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Грушевидная'){
                             panSizeList=panPearShapedWithoutRimSizeList;
-                            panSizeValue = '...';
-                            _isPanSizeDisable = false;
-                            _isButtonVisible=false;
-                            firstArt = '2';
-                            secondArt = '5';}
+                            workWithSecondDropButton();
+                          }
                           else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Позница'){
                             panSizeList=poznicaSizeList;
-                            panSizeValue = '...';
-                            _isPanSizeDisable = false;
-                            _isButtonVisible=false;
-                            secondArt = '7';}
+                            workWithSecondDropButton();
+                          }
                         });
                       },
                     ),// Список выбора формы корпуса
@@ -167,18 +144,41 @@ class _PanSelectionState extends State<PanSelection> {
                       visible: _isButtonVisible,
                       child: SizedBox(width:250, height:55,
                         child: ElevatedButton(
-                          onPressed: () {art=firstArt+secondArt+thirdArt;
-                            Navigator.pushNamed(
+                          onPressed: () {
+                            if (panTypeValue == 'Кастрюля с ободком' && panShapeValue == 'Цилиндрическая' && panSizeValue == '2,0 л') {art= 'MD161'; panName=artMD161;}
+                            else if (panTypeValue == 'Кастрюля с ободком' && panShapeValue == 'Цилиндрическая' && panSizeValue == '3,0 л') {art= 'MD181';panName=artMD181;}
+                            else if (panTypeValue == 'Кастрюля с ободком' && panShapeValue == 'Цилиндрическая' && panSizeValue == '4,0 л') {art= 'MD201';panName=artMD201;}
+                            else if (panTypeValue == 'Кастрюля с ободком' && panShapeValue == 'Цилиндрическая' && panSizeValue == '5,5 л') {art= 'MD221';panName=artMD221;}
+                            else if (panTypeValue == 'Кастрюля с ободком' && panShapeValue == 'Сферическая' && panSizeValue == '2,0 л') {art= 'MC161';panName=artMC161;}
+                            else if (panTypeValue == 'Кастрюля с ободком' && panShapeValue == 'Сферическая' && panSizeValue == '3,0 л') {art= 'MC181';panName=artMC181;}
+                            else if (panTypeValue == 'Кастрюля с ободком' && panShapeValue == 'Сферическая' && panSizeValue == '4,0 л') {art= 'MC201';panName=artMC201;}
+                            else if (panTypeValue == 'Кастрюля с ободком' && panShapeValue == 'Сферическая' && panSizeValue == '5,5 л') {art= 'MC221';panName=artMC221;}
+                            else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Цилиндрическая' && panSizeValue == '1,5 л') {art= '1607';panName=art1607;}
+                            else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Цилиндрическая' && panSizeValue == '2,0 л') {art= '1610';panName=art1610;}
+                            else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Цилиндрическая' && panSizeValue == '3,5 л') {art= '1612';panName=art1612;}
+                            else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Цилиндрическая' && panSizeValue == '5,5 л') {art= '1617';panName=art1617;}
+                            else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Цилиндрическая' && panSizeValue == '8,0 л') {art= '1620';panName=art1620;}
+                            else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Цилиндрическая' && panSizeValue == '9,0 л') {art= '1622';panName=art1622;}
+                            else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Цилиндрическая' && panSizeValue == '12,0 л') {art= '1624';panName=art1624;}
+                            else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Цилиндрическая' && panSizeValue == '14,0 л') {art= '1626';panName=art1626;}
+                            else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Сферическая' && panSizeValue == '4,0 л') {art= '1912';panName=art1912;}
+                            else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Сферическая' && panSizeValue == '5,5 л') {art= '1917';panName=art1917;}
+                            else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Сферическая' && panSizeValue == '8,0 л') {art= '1920';panName=art1920;}
+                            else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Грушевидная' && panSizeValue == '4,0 л') {art= '2512';panName=art2512;}
+                            else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Грушевидная' && panSizeValue == '5,5 л') {art= '2517';panName=art2517;}
+                            else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Грушевидная' && panSizeValue == '8,0 л') {art= '2520';panName=art2520;}
+                            else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Позница' && panSizeValue == '8,0 л (2 вставки)') {art= '1720';panName=art1720;}
+                            else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Позница' && panSizeValue == '9,0 л (3 вставки)') {art= '1722';panName=art1722;}
+                            else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Позница' && panSizeValue == '12,0 л (4 вставки)') {art= '1724';panName=art1724;}
+                              Navigator.pushNamed(
                               context,
                               PanDrawingSelectionScreen.routeName,
                               arguments: PassedFromPanSelectionScreenArguments(
                                 panTypeValue,
                                 panShapeValue,
                                 panSizeValue,
-                                firstArt,
-                                secondArt,
-                                thirdArt,
                                 art,
+                                panName,
                               ),
                             );
                           },
@@ -198,8 +198,7 @@ class _PanSelectionState extends State<PanSelection> {
                           ),
                         ),
                       ),
-                    ),// Появляющаяся кнопка
-                    // const Expanded(child: SizedBox()),
+                    ),// Появляющаяся кнопка перехода на экран выбора чертежа
                     const Expanded(child: SizedBox(height: 50,)),// Отступ по вертикали
                   ],
                 ),
@@ -210,4 +209,20 @@ class _PanSelectionState extends State<PanSelection> {
       ),
     );
   }
+
+
+  void workWithFirstDropButton() {
+    panShapeValue = '...';
+    panSizeValue = '...';
+    _isPanShapeDisable = false;
+    _isPanSizeDisable= true;
+    _isButtonVisible=false;
+  }
+
+  void workWithSecondDropButton() {
+    panSizeValue = '...';
+    _isPanSizeDisable = false;
+    _isButtonVisible=false;
+  }
+
 }
