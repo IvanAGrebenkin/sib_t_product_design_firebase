@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sib_t_product_design/Screens/PanScreens/pan_drawing_list.dart';
 import '../../Utils/decoration.dart';
 import '../../Utils/widgets.dart';
 
@@ -19,6 +20,7 @@ const PanDrawingSelectionScreen({Key? key}) : super(key: key);
 
   static const routeName = '/pan_drawing_selection_screen';// Маршрут куда передаются аргументы
 
+
   @override
   Widget build(BuildContext context) {
 
@@ -30,25 +32,19 @@ const PanDrawingSelectionScreen({Key? key}) : super(key: key);
         appBar: panDrawingSelectionScreenAppBar(context, pageName),
         drawer: navDrawer(context),
         body: Container(
-          decoration: backgroundOfOthersScreen,// Задание фонового изображения
-          child: SingleChildScrollView(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(
-                minWidth: MediaQuery.of(context).size.width,
-                minHeight: MediaQuery.of(context).size.height,
-              ),// Ограничения в соответствии с разрешением экрана устройства
-              child: IntrinsicHeight(
-                child: Column(
-                    children: [
-                      const SizedBox(height:20,),
-                      const Text('Наименование изделия:'),// Заголовок
-                      Text(args.panName),// Вывод наименования изделия
-                      const SizedBox(height:20,),
-                      Text('Артикул изделия: ${args.art}'),// Вывод артикула
-                    ]
+          decoration: backgroundOfOthersScreen,
+          child: Column(
+            children: [
+              const Text('Наименование изделия:'),// Заголовок
+              Text(args.panName),// Вывод наименования изделия
+              const SizedBox(height:20,),
+              Text('Артикул изделия: ${args.art}'),
+              const Expanded(
+                child: SizedBox(height: 500,
+                  child: PanDrawingListWidget(),
                 ),
               ),
-            ),
+            ],
           ),
         ),
       ),

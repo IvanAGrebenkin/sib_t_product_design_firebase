@@ -36,7 +36,7 @@ class _SibTProductDesignAppState extends State<SibTProductDesignApp> {
         '/kettle_selection_screen': (context) => const KettleSelection(),
         '/household_items_selection_screen': (context) => const HouseholdItemsSelection(),
         '/flat_items_selection_screen': (context) => const FlatItemsSelection(),
-        PanDrawingSelectionScreen.routeName: (context) => PanDrawingSelectionScreen(),
+        PanDrawingSelectionScreen.routeName: (context) => const PanDrawingSelectionScreen(),
 
       },
     );
