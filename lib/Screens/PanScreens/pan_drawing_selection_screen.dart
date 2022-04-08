@@ -39,11 +39,13 @@ const PanDrawingSelectionScreen({Key? key}) : super(key: key);
               Text(args.panName),// Вывод наименования изделия
               const SizedBox(height:20,),
               Text('Артикул изделия: ${args.art}'),
-              const Expanded(
+              const SizedBox(height:20,),
+              Expanded(
                 child: SizedBox(height: 500,
                   child: PanDrawingListWidget(),
                 ),
               ),
+
             ],
           ),
         ),
