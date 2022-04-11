@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Screens/PanScreens/pan_drawing_selection_screen.dart';
+import 'Screens/PanScreens/pan_drawing_view_screen.dart';
 import 'Screens/auth_screen.dart';
 import 'Screens/consent_to_use.dart';
 import 'Screens/FlatItemsScreens/flat_items_selection_screen.dart';
@@ -13,6 +14,7 @@ void main() {
   // runApp(const AuthScreen());
   // runApp(const ConsentToUse());
   // runApp(const PanSelection());
+  // runApp(const PanDrawingViewScreen());
 }
 
 class SibTProductDesignApp extends StatefulWidget {
