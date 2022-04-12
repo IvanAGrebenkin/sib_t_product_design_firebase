@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:sib_t_product_design/Screens/PanScreens/pan_drawing_view_screen.dart';
 
+class PassedFromPanSelectionScreenArguments {
+  final String panTypeValue;
+  final String panShapeValue;
+  final String panSizeValue;
+  final String art;
+  final String panName;
+
+  PassedFromPanSelectionScreenArguments(this.panTypeValue, this.panShapeValue, this.panSizeValue,this.art, this.panName,);
+}
+
 class PanDrawings {
   final String panDrawingNumber;
   final String panDrawingName;
@@ -16,7 +26,7 @@ class PanDrawingListWidget extends StatelessWidget {
   PanDrawingListWidget({Key? key}) : super(key: key);
 
 
-final _panDrawings =[
+final _panDrawings1607 =[
   PanDrawings (panDrawingNumber: 'ПЭ 07.02', panDrawingName: 'Ручка',currentDrawing: 'assets/drawings/pans/1607/ПЭ 07.02 Ручка.webp',),
   PanDrawings (panDrawingNumber: 'ПЭ 19.01.02.А', panDrawingName: 'Ручка 16',currentDrawing: 'assets/drawings/pans/1607/ПЭ 19.01.02.А Ручка 16.webp',),
   PanDrawings (panDrawingNumber: 'ПЭ 33.01.01', panDrawingName: 'Корпус',currentDrawing: 'assets/drawings/pans/1607/ПЭ 33.01.01 Корпус.webp',),
@@ -25,17 +35,38 @@ final _panDrawings =[
   PanDrawings (panDrawingNumber: 'ПЭ 99.02.01', panDrawingName: 'Крышка',currentDrawing: 'assets/drawings/pans/1607/ПЭ 99.02.01 Крышка.webp',),
   PanDrawings (panDrawingNumber: 'ПЭ 99.02.СБ', panDrawingName: 'Крышка с ручкой в сборе',currentDrawing: 'assets/drawings/pans/1607/ПЭ 99.02.СБ Крышка.webp',),
   PanDrawings (panDrawingNumber: 'ПЭ 99.02-01.СБ', panDrawingName: 'Крышка с державкой в сборе',currentDrawing: 'assets/drawings/pans/1607/ПЭ 99.02-01.СБ Крышка.webp',),
-
 ];
+
+  final _panDrawings1610 =[
+    PanDrawings (panDrawingNumber: 'ПЭ 19.01.02', panDrawingName: 'Ручка 18',currentDrawing: 'assets/drawings/pans/1610/ПЭ 19.01.02 Ручка 18.webp',),
+    PanDrawings (panDrawingNumber: 'ПЭ 19.02.01', panDrawingName: 'Крышка',currentDrawing: 'assets/drawings/pans/1610/ПЭ 19.02.01 Крышка.webp',),
+    PanDrawings (panDrawingNumber: 'ПЭ 19.02.01', panDrawingName: 'Крышка (из кружка)',currentDrawing: 'assets/drawings/pans/1610/ПЭ 19.02.01 Крышка (из кружка).webp',),
+    PanDrawings (panDrawingNumber: 'ПЭ 19.02.СБ', panDrawingName: 'Крышка с ручкой в сборе',currentDrawing: 'assets/drawings/pans/1610/ПЭ 19.02.СБ Крышка.webp',),
+    PanDrawings (panDrawingNumber: 'ПЭ 19.02-01.СБ', panDrawingName: 'Крышка с державкой в сборе',currentDrawing: 'assets/drawings/pans/1610/ПЭ 19.02-01.СБ Крышка.webp',),
+    PanDrawings (panDrawingNumber: 'ПЭ 21.01.01', panDrawingName: 'Корпус',currentDrawing: 'assets/drawings/pans/1610/ПЭ 21.01.01 Корпус.webp',),
+    PanDrawings (panDrawingNumber: 'ПЭ 21.01.А.СБ', panDrawingName: 'Корпус в сборе',currentDrawing: 'assets/drawings/pans/1610/ПЭ 21.01.А.СБ Корпус.webp',),
+    // PanDrawings (panDrawingNumber: 'ПЭ 99.02-01.СБ', panDrawingName: 'Крышка с державкой в сборе',currentDrawing: 'assets/drawings/pans/1607/ПЭ 99.02-01.СБ Крышка.webp',),
+  ];
 
   @override
   Widget build(BuildContext context) {
+
+
+
+    // Метод для доступа к класу, в котором объявлены передаваемые аргументы
+    final args = ModalRoute.of(context)!.settings.arguments as PassedFromPanSelectionScreenArguments;
+
+    var _panDrawings = [];
+    // _panDrawings = _panDrawings + args.art;
+    _panDrawings = _panDrawings1610;
+
+
     return ListView.builder(
             itemCount: _panDrawings.length,
             itemExtent: 150,
             itemBuilder: (BuildContext context, int index){
               final panDrawing = _panDrawings[index];
-              final a = panDrawing.currentDrawing;
+              final largeCurrentDrawing = panDrawing.currentDrawing;
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Stack(
@@ -98,7 +129,7 @@ final _panDrawings =[
                             context,
                             PanDrawingViewScreen.routeName,
                             arguments: PassedFromPanDrawingListArguments(
-                              a,
+                              largeCurrentDrawing,
                             ),
                           );
                           },
@@ -111,3 +142,4 @@ final _panDrawings =[
         );
   }
 }
+

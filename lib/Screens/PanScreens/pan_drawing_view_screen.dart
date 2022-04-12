@@ -3,9 +3,9 @@ import 'package:photo_view/photo_view.dart';
 
 
 class PassedFromPanDrawingListArguments {
-  final String a;
+  final String largeCurrentDrawing;
 
-  PassedFromPanDrawingListArguments(this.a,);
+  PassedFromPanDrawingListArguments(this.largeCurrentDrawing,);
 }
 
 
@@ -33,7 +33,7 @@ class _PanDrawingViewScreenState extends State<PanDrawingViewScreen> {
 
         // appBar: drawingViewScreenPageAppBar(context, pageName),
         body: PhotoView(
-          imageProvider: AssetImage(args.a),
+          imageProvider: AssetImage(args.largeCurrentDrawing),
         ),
       ),
     );

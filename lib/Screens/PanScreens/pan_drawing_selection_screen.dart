@@ -39,10 +39,6 @@ const PanDrawingSelectionScreen({Key? key}) : super(key: key);
               const SizedBox(height:10,),
               Text('Арт. ${args.art}'),
               const SizedBox(height:20,),
-              ElevatedButton(
-                onPressed: (){Navigator.pushNamed(context, '/pan_drawing_view_screen');
-                },
-                child: const Text('Показать чертеж'),),
               const SizedBox(height:20,),
               Expanded(
                 child: SizedBox(height: 500,
