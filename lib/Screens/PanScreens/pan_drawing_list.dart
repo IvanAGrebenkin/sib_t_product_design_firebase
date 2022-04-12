@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sib_t_product_design/Screens/PanScreens/pan_drawing_view_screen.dart';
 
 class PanDrawings {
   final String panDrawingNumber;
@@ -34,6 +35,7 @@ final _panDrawings =[
             itemExtent: 150,
             itemBuilder: (BuildContext context, int index){
               final panDrawing = _panDrawings[index];
+              final a = panDrawing.currentDrawing;
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Stack(
@@ -90,7 +92,16 @@ final _panDrawings =[
                       color: Colors.transparent,
                       child: InkWell(
                         borderRadius: BorderRadius.circular(25.0),
-                        onTap: (){Navigator.pushNamed(context, '/pan_drawing_view_screen');},
+                        onTap: (){
+                          // Navigator.pushNamed(context, '/pan_drawing_view_screen');
+                          Navigator.pushNamed(
+                            context,
+                            PanDrawingViewScreen.routeName,
+                            arguments: PassedFromPanDrawingListArguments(
+                              a,
+                            ),
+                          );
+                          },
                       ),
                     ),
                   ],

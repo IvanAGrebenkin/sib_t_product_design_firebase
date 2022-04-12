@@ -39,7 +39,8 @@ class _SibTProductDesignAppState extends State<SibTProductDesignApp> {
         '/household_items_selection_screen': (context) => const HouseholdItemsSelection(),
         '/flat_items_selection_screen': (context) => const FlatItemsSelection(),
         PanDrawingSelectionScreen.routeName: (context) => const PanDrawingSelectionScreen(),
-        '/pan_drawing_view_screen': (context) => const PanDrawingViewScreen(),
+        // '/pan_drawing_view_screen': (context) => const PanDrawingViewScreen(),
+        PanDrawingViewScreen.routeName: (context) => const PanDrawingViewScreen(),
 
       },
     );

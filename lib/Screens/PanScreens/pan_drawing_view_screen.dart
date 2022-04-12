@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 
-import '../../Utils/widgets.dart';
+
+class PassedFromPanDrawingListArguments {
+  final String a;
+
+  PassedFromPanDrawingListArguments(this.a,);
+}
+
 
 class PanDrawingViewScreen extends StatefulWidget {
   const PanDrawingViewScreen({Key? key}) : super(key: key);
+
+  static const routeName = '/pan_drawing_view_screen';// Маршрут куда передаются аргументы
 
   @override
   State<PanDrawingViewScreen> createState() => _PanDrawingViewScreenState();
@@ -13,17 +21,19 @@ class PanDrawingViewScreen extends StatefulWidget {
 class _PanDrawingViewScreenState extends State<PanDrawingViewScreen> {
   get pageName => 'Просмотр чертежа';
 
-
-
   @override
+
+
   Widget build(BuildContext context) {
+    // Метод для доступа к класу, в котором объявлены передаваемые аргументы
+    final args = ModalRoute.of(context)!.settings.arguments as PassedFromPanDrawingListArguments;
     return MaterialApp(
 
       home: Scaffold(
 
-        appBar: drawingViewScreenPageAppBar(context, pageName),
+        // appBar: drawingViewScreenPageAppBar(context, pageName),
         body: PhotoView(
-          imageProvider: const AssetImage('assets/drawings/pans/1607/ПЭ 99.01.СБ Корпус.webp'),
+          imageProvider: AssetImage(args.a),
         ),
       ),
     );
