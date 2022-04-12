@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+
 PreferredSizeWidget homePageAppBar(context, pageName) => AppBar(
     leading: Builder(
       builder: (BuildContext context) {
@@ -21,6 +22,36 @@ PreferredSizeWidget homePageAppBar(context, pageName) => AppBar(
 );// AppBar для страницы выбора группы
 
 PreferredSizeWidget nextPageAppBar(context, pageName) => AppBar(
+    leading: Builder(
+      builder: (BuildContext context) {
+        return IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () { Scaffold.of(context).openDrawer(); },
+          tooltip: 'Открыть меню навигации',
+        );
+      },
+    ),// Кнопка "Бургер" для открытия Drawer
+    title: Center(
+        child: Text('$pageName',
+          textAlign:TextAlign.center ,
+          style: const TextStyle(
+            fontSize: 18,
+          ),
+        )
+    ),// Заголовок страницы
+    actions: <Widget>[
+      IconButton(
+        tooltip: 'На начальную страницу',
+        onPressed: (){Navigator.pushNamed(context, '/group_selection_screen');},
+        icon: const Icon(Icons.home),),// Кнопка перехода на экран выбора группы
+      IconButton(
+        tooltip: 'На предыдущую страницу',
+        onPressed: (){Navigator.pop(context);},
+        icon: const Icon(Icons.arrow_back),),// Кнопка перехода на предыдущую страницу
+    ]
+);// AppBar для последующих страниц
+
+PreferredSizeWidget drawingViewScreenPageAppBar(context, pageName) => AppBar(
     leading: Builder(
       builder: (BuildContext context) {
         return IconButton(

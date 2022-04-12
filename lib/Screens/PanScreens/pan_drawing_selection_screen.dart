@@ -35,10 +35,15 @@ const PanDrawingSelectionScreen({Key? key}) : super(key: key);
           decoration: backgroundOfOthersScreen,
           child: Column(
             children: [
-              const Text('Наименование изделия:'),// Заголовок
-              Text(args.panName),// Вывод наименования изделия
               const SizedBox(height:20,),
-              Text('Артикул изделия: ${args.art}'),
+              Text(args.panName),// Вывод наименования изделия
+              const SizedBox(height:10,),
+              Text('Арт. ${args.art}'),
+              const SizedBox(height:20,),
+              ElevatedButton(
+                onPressed: (){Navigator.pushNamed(context, '/pan_drawing_view_screen');
+                },
+                child: const Text('Показать чертеж'),),
               const SizedBox(height:20,),
               Expanded(
                 child: SizedBox(height: 500,
@@ -53,3 +58,4 @@ const PanDrawingSelectionScreen({Key? key}) : super(key: key);
     );
   }
 }
+
