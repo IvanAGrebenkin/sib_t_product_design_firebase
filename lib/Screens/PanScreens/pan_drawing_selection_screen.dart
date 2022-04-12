@@ -27,8 +27,7 @@ const PanDrawingSelectionScreen({Key? key}) : super(key: key);
     // Метод для доступа к класу, в котором объявлены передаваемые аргументы
     final args = ModalRoute.of(context)!.settings.arguments as PassedFromPanSelectionScreenArguments;
 
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: panDrawingSelectionScreenAppBar(context, pageName),
         drawer: navDrawer(context),
         body: Container(
@@ -54,8 +53,8 @@ const PanDrawingSelectionScreen({Key? key}) : super(key: key);
             ],
           ),
         ),
-      ),
-    );
+      )
+    ;
   }
 }
 
