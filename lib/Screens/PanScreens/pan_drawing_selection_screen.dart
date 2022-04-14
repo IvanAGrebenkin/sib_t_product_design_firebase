@@ -86,6 +86,47 @@ class _PanDrawingSelectionScreenState extends State<PanDrawingSelectionScreen> {
       PanDrawings (panDrawingNumber: 'ПЭ 72.02.02', panDrawingName: 'Державка',currentDrawing: 'assets/drawings/fittings/ПЭ 72.02.02 Державка.webp',),
     ];
 
+    final panDrawings1620 =[
+      PanDrawings (panDrawingNumber: 'ПЭ 17.01.А.СБ', panDrawingName: 'Корпус в сборе',currentDrawing: 'assets/drawings/pans/1620/ПЭ 17.01.А.СБ Корпус.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 17.01.01.А', panDrawingName: 'Корпус',currentDrawing: 'assets/drawings/pans/1620/ПЭ 17.01.01.А Корпус.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 17.02.СБ', panDrawingName: 'Крышка с ручкой в сборе',currentDrawing: 'assets/drawings/lids/01620/ПЭ 17.02.СБ Крышка.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 17.02-01.СБ', panDrawingName: 'Крышка с державкой в сборе',currentDrawing: 'assets/drawings/lids/01620/ПЭ 17.02-01.СБ Крышка.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 17.02.01', panDrawingName: 'Крышка',currentDrawing: 'assets/drawings/lids/01620/ПЭ 17.02.01 Крышка.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 17.02.01', panDrawingName: 'Крышка (из кружка)',currentDrawing: 'assets/drawings/lids/01620/ПЭ 17.02.01 Крышка (из кружка).webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 07.02', panDrawingName: 'Ручка крышки',currentDrawing: 'assets/drawings/fittings/ПЭ 07.02 Ручка.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 72.02.02', panDrawingName: 'Державка',currentDrawing: 'assets/drawings/fittings/ПЭ 72.02.02 Державка.webp',),
+    ];
+
+    final panDrawings1622 =[
+      PanDrawings (panDrawingNumber: 'ПЭ 16.01.А.СБ', panDrawingName: 'Корпус в сборе',currentDrawing: 'assets/drawings/pans/1622/ПЭ 16.01.А.СБ Корпус.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 16.01.01.А', panDrawingName: 'Корпус',currentDrawing: 'assets/drawings/pans/1622/ПЭ 16.01.01.А Корпус.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 17.02.СБ', panDrawingName: 'Крышка с ручкой в сборе',currentDrawing: 'assets/drawings/lids/01620/ПЭ 17.02.СБ Крышка.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 17.02-01.СБ', panDrawingName: 'Крышка с державкой в сборе',currentDrawing: 'assets/drawings/lids/01620/ПЭ 17.02-01.СБ Крышка.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 17.02.01', panDrawingName: 'Крышка',currentDrawing: 'assets/drawings/lids/01620/ПЭ 17.02.01 Крышка.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 17.02.01', panDrawingName: 'Крышка (из кружка)',currentDrawing: 'assets/drawings/lids/01620/ПЭ 17.02.01 Крышка (из кружка).webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 07.02', panDrawingName: 'Ручка крышки',currentDrawing: 'assets/drawings/fittings/ПЭ 07.02 Ручка.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 72.02.02', panDrawingName: 'Державка',currentDrawing: 'assets/drawings/fittings/ПЭ 72.02.02 Державка.webp',),
+    ];
+
+    final panDrawings1624 =[
+      PanDrawings (panDrawingNumber: 'ПЭ 49.01.А.СБ', panDrawingName: 'Корпус в сборе',currentDrawing: 'assets/drawings/pans/1624/ПЭ 49.01.А.СБ Корпус.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 49.01.03.А', panDrawingName: 'Корпус',currentDrawing: 'assets/drawings/pans/1624/ПЭ 49.01.03.А Корпус.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 17.02.СБ', panDrawingName: 'Крышка с ручкой в сборе',currentDrawing: 'assets/drawings/lids/01620/ПЭ 17.02.СБ Крышка.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 17.02-01.СБ', panDrawingName: 'Крышка с державкой в сборе',currentDrawing: 'assets/drawings/lids/01620/ПЭ 17.02-01.СБ Крышка.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 17.02.01', panDrawingName: 'Крышка',currentDrawing: 'assets/drawings/lids/01620/ПЭ 17.02.01 Крышка.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 17.02.01', panDrawingName: 'Крышка (из кружка)',currentDrawing: 'assets/drawings/lids/01620/ПЭ 17.02.01 Крышка (из кружка).webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 07.02', panDrawingName: 'Ручка крышки',currentDrawing: 'assets/drawings/fittings/ПЭ 07.02 Ручка.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 72.02.02', panDrawingName: 'Державка',currentDrawing: 'assets/drawings/fittings/ПЭ 72.02.02 Державка.webp',),
+    ];
+
+    final panDrawings1626 =[
+      PanDrawings (panDrawingNumber: 'ПЭ 111.01.СБ', panDrawingName: 'Корпус в сборе',currentDrawing: 'assets/drawings/pans/1626/ПЭ 111.01.СБ Корпус.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 111.01.01', panDrawingName: 'Корпус',currentDrawing: 'assets/drawings/pans/1626/ПЭ 111.01.01 Корпус.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 30.02.СБ', panDrawingName: 'Крышка с ручкой в сборе',currentDrawing: 'assets/drawings/lids/01124/ПЭ 30.02.СБ Крышка.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 30.02.01', panDrawingName: 'Крышка',currentDrawing: 'assets/drawings/lids/01124/ПЭ 30.02.01 Крышка.webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 30.02.01', panDrawingName: 'Крышка (из кружка)',currentDrawing: 'assets/drawings/lids/01124/ПЭ 30.02.01 Крышка (из кружка).webp',),
+      PanDrawings (panDrawingNumber: 'ПЭ 07.02', panDrawingName: 'Ручка крышки',currentDrawing: 'assets/drawings/fittings/ПЭ 07.02 Ручка.webp',),
+    ];
 
     List panDrawings = [];
 
@@ -95,6 +136,11 @@ class _PanDrawingSelectionScreenState extends State<PanDrawingSelectionScreen> {
     else if (currentArt == '1610'){panDrawings=panDrawings1610;}
     else if (currentArt == '1612'){panDrawings=panDrawings1612;}
     else if (currentArt == '1617'){panDrawings=panDrawings1617;}
+    else if (currentArt == '1620'){panDrawings=panDrawings1620;}
+    else if (currentArt == '1622'){panDrawings=panDrawings1622;}
+    else if (currentArt == '1624'){panDrawings=panDrawings1624;}
+    else if (currentArt == '1626'){panDrawings=panDrawings1626;}
+
 
 
     return Scaffold(
