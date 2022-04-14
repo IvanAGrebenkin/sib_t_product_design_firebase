@@ -170,10 +170,7 @@ class _PanSelectionState extends State<PanSelection> {
                             else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Позница' && panSizeValue == '8,0 л (2 вставки)') {art= '1720';panName=art1720;}
                             else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Позница' && panSizeValue == '9,0 л (3 вставки)') {art= '1722';panName=art1722;}
                             else if (panTypeValue == 'Кастрюля без ободка' && panShapeValue == 'Позница' && panSizeValue == '12,0 л (4 вставки)') {art= '1724';panName=art1724;}
-                              Navigator.pushNamed(
-                              context,
-                              PanDrawingSelectionScreen.routeName,
-                              arguments: PassedFromPanSelectionScreenArguments(
+                            Navigator.pushNamed(context, PanDrawingSelectionScreen.routeName, arguments: PassedFromPanSelectionScreenArguments(
                                 panTypeValue,
                                 panShapeValue,
                                 panSizeValue,

@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sib_t_product_design/Screens/PanScreens/pan_drawing_view_screen.dart';
 
-class PassedFromPanSelectionScreenArguments {
-  final String panTypeValue;
-  final String panShapeValue;
-  final String panSizeValue;
-  final String art;
-  final String panName;
 
-  PassedFromPanSelectionScreenArguments(this.panTypeValue, this.panShapeValue, this.panSizeValue,this.art, this.panName,);
-}
 
 class PanDrawings {
   final String panDrawingNumber;
@@ -22,11 +14,16 @@ class PanDrawings {
   });
 }
 
-class PanDrawingListWidget extends StatelessWidget {
-  PanDrawingListWidget({Key? key}) : super(key: key);
+class PanDrawingListWidget extends StatefulWidget {
+  const PanDrawingListWidget({Key? key}) : super(key: key);
 
 
-final _panDrawings1607 =[
+  @override
+  State<PanDrawingListWidget> createState() => _PanDrawingListWidgetState();
+}
+
+class _PanDrawingListWidgetState extends State<PanDrawingListWidget> {
+final panDrawings1607 =[
   PanDrawings (panDrawingNumber: 'ПЭ 07.02', panDrawingName: 'Ручка',currentDrawing: 'assets/drawings/pans/1607/ПЭ 07.02 Ручка.webp',),
   PanDrawings (panDrawingNumber: 'ПЭ 19.01.02.А', panDrawingName: 'Ручка 16',currentDrawing: 'assets/drawings/pans/1607/ПЭ 19.01.02.А Ручка 16.webp',),
   PanDrawings (panDrawingNumber: 'ПЭ 33.01.01', panDrawingName: 'Корпус',currentDrawing: 'assets/drawings/pans/1607/ПЭ 33.01.01 Корпус.webp',),
@@ -37,7 +34,7 @@ final _panDrawings1607 =[
   PanDrawings (panDrawingNumber: 'ПЭ 99.02-01.СБ', panDrawingName: 'Крышка с державкой в сборе',currentDrawing: 'assets/drawings/pans/1607/ПЭ 99.02-01.СБ Крышка.webp',),
 ];
 
-  final _panDrawings1610 =[
+  final panDrawings1610 =[
     PanDrawings (panDrawingNumber: 'ПЭ 19.01.02', panDrawingName: 'Ручка 18',currentDrawing: 'assets/drawings/pans/1610/ПЭ 19.01.02 Ручка 18.webp',),
     PanDrawings (panDrawingNumber: 'ПЭ 19.02.01', panDrawingName: 'Крышка',currentDrawing: 'assets/drawings/pans/1610/ПЭ 19.02.01 Крышка.webp',),
     PanDrawings (panDrawingNumber: 'ПЭ 19.02.01', panDrawingName: 'Крышка (из кружка)',currentDrawing: 'assets/drawings/pans/1610/ПЭ 19.02.01 Крышка (из кружка).webp',),
@@ -45,27 +42,31 @@ final _panDrawings1607 =[
     PanDrawings (panDrawingNumber: 'ПЭ 19.02-01.СБ', panDrawingName: 'Крышка с державкой в сборе',currentDrawing: 'assets/drawings/pans/1610/ПЭ 19.02-01.СБ Крышка.webp',),
     PanDrawings (panDrawingNumber: 'ПЭ 21.01.01', panDrawingName: 'Корпус',currentDrawing: 'assets/drawings/pans/1610/ПЭ 21.01.01 Корпус.webp',),
     PanDrawings (panDrawingNumber: 'ПЭ 21.01.А.СБ', panDrawingName: 'Корпус в сборе',currentDrawing: 'assets/drawings/pans/1610/ПЭ 21.01.А.СБ Корпус.webp',),
-    // PanDrawings (panDrawingNumber: 'ПЭ 99.02-01.СБ', panDrawingName: 'Крышка с державкой в сборе',currentDrawing: 'assets/drawings/pans/1607/ПЭ 99.02-01.СБ Крышка.webp',),
   ];
 
+   List panDrawings = [];
+
+  var currentArt;
+// if (currentArt=='1610'){};
+//   get currentArt => '1610';
+
+// Маршрут куда передаются аргументы
   @override
   Widget build(BuildContext context) {
 
 
+    if (currentArt == '1610'){panDrawings = panDrawings1610;}
+    else if(currentArt == '1607'){panDrawings = panDrawings1607;}
 
-    // Метод для доступа к класу, в котором объявлены передаваемые аргументы
-    final args = ModalRoute.of(context)!.settings.arguments as PassedFromPanSelectionScreenArguments;
 
-    var _panDrawings = [];
-    // _panDrawings = _panDrawings + args.art;
-    _panDrawings = _panDrawings1610;
 
+    // if (argsFromPanSelectionScreen.art1=='1610'){panDrawings = panDrawings1610;}
 
     return ListView.builder(
-            itemCount: _panDrawings.length,
+            itemCount: panDrawings.length,
             itemExtent: 150,
             itemBuilder: (BuildContext context, int index){
-              final panDrawing = _panDrawings[index];
+              final panDrawing = panDrawings[index];
               final largeCurrentDrawing = panDrawing.currentDrawing;
               return Padding(
                 padding: const EdgeInsets.all(8.0),
