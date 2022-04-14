@@ -23,7 +23,6 @@ class _PanDrawingViewScreenState extends State<PanDrawingViewScreen> {
 
   @override
 
-
   Widget build(BuildContext context) {
 
     // Метод для доступа к класу, в котором объявлены передаваемые аргументы

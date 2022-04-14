@@ -8,7 +8,6 @@ class AuthScreen extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: SingleChildScrollView(
-          // physics: const NeverScrollableScrollPhysics(),
           child: ConstrainedBox(
             constraints: BoxConstraints(
               minWidth: MediaQuery.of(context).size.width,

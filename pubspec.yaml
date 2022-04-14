@@ -62,8 +62,16 @@ flutter:
   assets:
    - assets/
    - assets/images/
+   - assets/drawings/fittings/
+
+   - assets/drawings/lids/01607/
+   - assets/drawings/lids/01610/
+   - assets/drawings/lids/01617/
+
    - assets/drawings/pans/1607/
    - assets/drawings/pans/1610/
+   - assets/drawings/pans/1612/
+   - assets/drawings/pans/1617/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
