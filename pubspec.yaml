@@ -69,6 +69,11 @@ flutter:
    - assets/drawings/lids/01610/
    - assets/drawings/lids/01617/
    - assets/drawings/lids/01620/
+   - assets/drawings/lids/1723/
+   - assets/drawings/lids/0MD161M/
+   - assets/drawings/lids/0MD181M/
+   - assets/drawings/lids/0MD201M/
+   - assets/drawings/lids/0MD221M/
 
 
    - assets/drawings/pans/1607/
@@ -79,6 +84,22 @@ flutter:
    - assets/drawings/pans/1622/
    - assets/drawings/pans/1624/
    - assets/drawings/pans/1626/
+   - assets/drawings/pans/1912/
+   - assets/drawings/pans/1917/
+   - assets/drawings/pans/1920/
+   - assets/drawings/pans/2512/
+   - assets/drawings/pans/2517/
+   - assets/drawings/pans/2520/
+   - assets/drawings/pans/1720/
+   - assets/drawings/pans/1722/
+   - assets/drawings/pans/1724/
+   - assets/drawings/pans/MD161/
+   - assets/drawings/pans/MD181/
+   - assets/drawings/pans/MD201/
+   - assets/drawings/pans/MD221/
+
+
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

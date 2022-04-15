@@ -62,12 +62,12 @@ class _PanSelectionState extends State<PanSelection> {
                           _isPanSizeDisable = true;
                           _isButtonVisible = false;
                         }
-                        else if (newValue == 'Кастрюля с ободком'){
-                          panShapeList=typesOfPanWithRimShapesList;
-                          workWithFirstDropButton();
-                        }
                         else if (newValue == 'Кастрюля без ободка'){
                           panShapeList=typesOfPanWithoutRimShapesList;
+                          workWithFirstDropButton();
+                        }
+                        else if (newValue == 'Кастрюля с ободком'){
+                          panShapeList=typesOfPanWithRimShapesList;
                           workWithFirstDropButton();
                         }
                       });},

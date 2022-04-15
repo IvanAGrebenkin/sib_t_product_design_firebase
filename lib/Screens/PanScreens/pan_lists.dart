@@ -1,4 +1,4 @@
-List <String> listOfPanTypes = <String>['...','Кастрюля с ободком','Кастрюля без ободка',];
+List <String> listOfPanTypes = <String>['...','Кастрюля без ободка','Кастрюля с ободком',];
 
 List <String> typesOfPanWithRimShapesList = <String>['...','Цилиндрическая','Сферическая',]; // Типы форм кастрюль с ободком
 List <String> typesOfPanWithoutRimShapesList = <String>['...','Цилиндрическая','Сферическая','Грушевидная','Позница',]; // Типы форм кастрюль без ободка
