@@ -376,7 +376,7 @@ class _PanDrawingSelectionScreenState extends State<PanDrawingSelectionScreen> {
                       itemExtent: 150,
                       itemBuilder: (BuildContext context, int index){
                         final panDrawing = panDrawings[index];
-                        final largeCurrentDrawing = panDrawing.currentDrawing;
+                        final largeCurrentDrawing = panDrawing.flatItemCurrentDrawing;
                         return Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Stack(
@@ -392,7 +392,7 @@ class _PanDrawingSelectionScreenState extends State<PanDrawingSelectionScreen> {
                                       height: 150,
                                       child: Padding(
                                         padding: const EdgeInsets.all(8.0),
-                                        child: Image(image: AssetImage(panDrawing.currentDrawing)),
+                                        child: Image(image: AssetImage(panDrawing.flatItemCurrentDrawing)),
                                       )),
                                   Expanded(
                                     child: Column(
@@ -401,7 +401,7 @@ class _PanDrawingSelectionScreenState extends State<PanDrawingSelectionScreen> {
                                       children: [
                                         SizedBox(
                                           width: double.infinity,
-                                          child: Text('Чертеж № ${panDrawing.panDrawingNumber}',
+                                          child: Text('Чертеж № ${panDrawing.flatItemDrawingNumber}',
                                             textAlign: TextAlign.center,
                                             style: const TextStyle(
                                               fontSize: 14,
@@ -418,7 +418,7 @@ class _PanDrawingSelectionScreenState extends State<PanDrawingSelectionScreen> {
                                         ),
                                         // const SizedBox(height: 10,),
                                         // const Text('Наименование чертежа:'),
-                                        Text(panDrawing.panDrawingName,
+                                        Text(panDrawing.flatItemDrawingName,
                                           textAlign: TextAlign.start,
                                           style: const TextStyle(
                                             fontSize: 20,
@@ -456,9 +456,6 @@ class _PanDrawingSelectionScreenState extends State<PanDrawingSelectionScreen> {
           ),
         ),
       );
-
-
-
   }
 }
 
