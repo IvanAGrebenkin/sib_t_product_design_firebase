@@ -12,7 +12,7 @@ class PassedFromFlatItemsSelectionScreenArguments {
 class FlatItemsDrawingViewScreen extends StatefulWidget {
   const FlatItemsDrawingViewScreen({Key? key}) : super(key: key);
 
-  static const routeName = '/pan_drawing_view_screen';// Маршрут куда передаются аргументы
+  static const routeName = '/flat_item_drawing_view_screen';// Маршрут куда передаются аргументы
 
   @override
   State<FlatItemsDrawingViewScreen> createState() => _FlatItemsDrawingViewScreenState();

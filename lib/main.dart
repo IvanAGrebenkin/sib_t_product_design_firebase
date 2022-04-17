@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Screens/FlatItemsScreens/flat_item_drawing_view_screen.dart';
 import 'Screens/PanScreens/pan_drawing_selection_screen.dart';
 import 'Screens/PanScreens/pan_drawing_view_screen.dart';
 import 'Screens/auth_screen.dart';
@@ -40,6 +41,7 @@ class _SibTProductDesignAppState extends State<SibTProductDesignApp> {
         '/flat_items_selection_screen': (context) => const FlatItemsSelection(),
         PanDrawingSelectionScreen.routeName: (context) => const PanDrawingSelectionScreen(),
         PanDrawingViewScreen.routeName: (context) => const PanDrawingViewScreen(),
+        FlatItemsDrawingViewScreen.routeName: (context) => const FlatItemsDrawingViewScreen(),
 
       },
     );
