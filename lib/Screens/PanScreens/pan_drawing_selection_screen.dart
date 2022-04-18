@@ -33,7 +33,7 @@ const PanDrawingSelectionScreen({Key? key}) : super(key: key);
 }
 
 class _PanDrawingSelectionScreenState extends State<PanDrawingSelectionScreen> {
-  get pageName => 'Выберите чертеж\n кастрюли';
+  get pageName => 'Выберите чертеж';
 // Маршрут куда передаются аргументы
   @override
   Widget build(BuildContext context) {
