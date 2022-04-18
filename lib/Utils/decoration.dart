@@ -31,3 +31,12 @@ final groupButtonDecoration= ElevatedButton.styleFrom(
 );// Оформление кнопок страницы выбора группы изделий
 
 const groupSelectionButtonTextStyle = TextStyle(fontSize: 15,color: Color(0xff0079D0),);// Оформление текста внутри кнопок страницы выбора группы изделий
+
+final kettlesButtonDecoration= ElevatedButton.styleFrom(
+  primary: Colors.white,
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(25.0),// Величина скругления углов границы поля
+  ),// Вид формы (прямоугольник со скругленными углами)
+);// Оформление кнопок страницы выбора группы изделий
+
+const kettleSelectionButtonTextStyle = TextStyle(color: Color(0xff0079D0),);// Оформление текста внутри кнопок страницы выбора чайников
