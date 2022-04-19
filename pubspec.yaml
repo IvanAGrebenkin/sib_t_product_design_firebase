@@ -74,6 +74,9 @@ flutter:
    - assets/drawings/lids/0MD181M/
    - assets/drawings/lids/0MD201M/
    - assets/drawings/lids/0MD221M/
+   - assets/drawings/lids/00207/
+   - assets/drawings/lids/02713/
+   - assets/drawings/lids/02716/
 
 
    - assets/drawings/pans/1607/
@@ -112,6 +115,11 @@ flutter:
    - assets/drawings/flat_items/3021/
    - assets/drawings/flat_items/3024/
    - assets/drawings/flat_items/3026/
+   - assets/drawings/kettles/2707/
+   - assets/drawings/kettles/2713/
+   - assets/drawings/kettles/2714/
+   - assets/drawings/kettles/2716/
+   - assets/drawings/kettles/2717/
 
 
 
