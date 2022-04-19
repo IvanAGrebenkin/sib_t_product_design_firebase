@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Screens/FlatItemsScreens/flat_item_drawing_view_screen.dart';
+import 'Screens/KettleScreens/kettle_drawing_selection_screen.dart';
+import 'Screens/KettleScreens/kettle_drawing_view_screen.dart';
 import 'Screens/PanScreens/pan_drawing_selection_screen.dart';
 import 'Screens/PanScreens/pan_drawing_view_screen.dart';
 import 'Screens/auth_screen.dart';
@@ -16,6 +18,7 @@ void main() {
   // runApp(const ConsentToUse());
   // runApp(const PanSelection());
   // runApp(const PanDrawingViewScreen());
+  // runApp(const KettleDrawingViewScreen());
 }
 
 class SibTProductDesignApp extends StatefulWidget {
@@ -41,6 +44,8 @@ class _SibTProductDesignAppState extends State<SibTProductDesignApp> {
         '/flat_items_selection_screen': (context) => const FlatItemsSelection(),
         PanDrawingSelectionScreen.routeName: (context) => const PanDrawingSelectionScreen(),
         PanDrawingViewScreen.routeName: (context) => const PanDrawingViewScreen(),
+        KettleDrawingSelectionScreen.routeName: (context) => const KettleDrawingSelectionScreen(),
+        KettleDrawingViewScreen.routeName: (context) => const KettleDrawingViewScreen(),
         FlatItemsDrawingViewScreen.routeName: (context) => const FlatItemsDrawingViewScreen(),
 
       },

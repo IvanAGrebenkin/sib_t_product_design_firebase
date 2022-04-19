@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../Utils/decoration.dart';
 import '../../Utils/widgets.dart';
+import '../PanScreens/pan_lists.dart';
+import 'kettle_drawing_selection_screen.dart';
 
 class KettleSelection extends StatefulWidget {
   const KettleSelection({Key? key}) : super(key: key);
@@ -10,6 +12,15 @@ class KettleSelection extends StatefulWidget {
 
 class _KettleSelectionState extends State<KettleSelection> {
   get pageName => 'Чайники';
+
+  String kettleTypeValue = '...';// Переменная для хранения выбранного значения в списке группы изделий
+  String kettleShapeValue = '...';// Переменная для хранения выбранного значения в списке формы корпуса
+  String kettleSizeValue = '...';// Переменная для хранения выбранного значения в списке вместимости изделия
+  String kettleArt = '';// Переменная для хранения артикула выбранного изделия
+  String kettleName = '';// Переменная для хранения полного наименования выбранного изделия
+
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -49,7 +60,14 @@ class _KettleSelectionState extends State<KettleSelection> {
                         ),// Артикул изделия
                       ],
                     ),
-                    onPressed: (){},
+                    onPressed: (){
+                      kettleArt= '2707'; kettleName=art2707;
+                      Navigator.pushNamed(context, KettleDrawingSelectionScreen.routeName, arguments: PassedFromKettleSelectionScreenArguments(
+                        kettleArt,
+                        kettleName,
+                      ),
+                      );
+                    },
                   ),
                 ),// Габариты кнопки
               ),// Кнопка выбора 2707
@@ -81,7 +99,14 @@ class _KettleSelectionState extends State<KettleSelection> {
                         ),// Артикул изделия
                       ],
                     ),
-                    onPressed: (){},
+                    onPressed: (){
+                      kettleArt= '2713'; kettleName=art2713;
+                      Navigator.pushNamed(context, KettleDrawingSelectionScreen.routeName, arguments: PassedFromKettleSelectionScreenArguments(
+                        kettleArt,
+                        kettleName,
+                      ),
+                      );
+                    },
                   ),
                 ),// Габариты кнопки
               ),// Кнопка выбора 2713
@@ -113,7 +138,14 @@ class _KettleSelectionState extends State<KettleSelection> {
                         ),// Артикул изделия
                       ],
                     ),
-                    onPressed: (){},
+                    onPressed: (){
+                      kettleArt= '2714'; kettleName=art2714;
+                      Navigator.pushNamed(context, KettleDrawingSelectionScreen.routeName, arguments: PassedFromKettleSelectionScreenArguments(
+                        kettleArt,
+                        kettleName,
+                      ),
+                      );
+                    },
                   ),
                 ),// Габариты кнопки
               ),// Кнопка выбора 2714
@@ -145,7 +177,12 @@ class _KettleSelectionState extends State<KettleSelection> {
                         ),// Артикул изделия
                       ],
                     ),
-                    onPressed: (){},
+                    onPressed: (){kettleArt= '2716'; kettleName=art2716;
+                    Navigator.pushNamed(context, KettleDrawingSelectionScreen.routeName, arguments: PassedFromKettleSelectionScreenArguments(
+                      kettleArt,
+                      kettleName,
+                    ),
+                    );},
                   ),
                 ),// Габариты кнопки
               ),// Кнопка выбора 2716
@@ -177,7 +214,12 @@ class _KettleSelectionState extends State<KettleSelection> {
                         ),// Артикул изделия
                       ],
                     ),
-                    onPressed: (){},
+                    onPressed: (){kettleArt= '2717'; kettleName=art2717;
+                    Navigator.pushNamed(context, KettleDrawingSelectionScreen.routeName, arguments: PassedFromKettleSelectionScreenArguments(
+                      kettleArt,
+                      kettleName,
+                    ),
+                    );},
                   ),
                 ),// Габариты кнопки
               ),// Кнопка выбора 2717
