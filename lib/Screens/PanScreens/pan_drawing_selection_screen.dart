@@ -407,7 +407,6 @@ class _PanDrawingSelectionScreenState extends State<PanDrawingSelectionScreen> {
                                             ),
                                           ),
                                         ),
-                                        // const SizedBox(height: 10,),
                                         const Padding(
                                           padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                                           child: Divider(
@@ -415,8 +414,6 @@ class _PanDrawingSelectionScreenState extends State<PanDrawingSelectionScreen> {
                                             thickness: 2,
                                           ),
                                         ),
-                                        // const SizedBox(height: 10,),
-                                        // const Text('Наименование чертежа:'),
                                         Text(panDrawing.panDrawingName,
                                           textAlign: TextAlign.start,
                                           style: const TextStyle(

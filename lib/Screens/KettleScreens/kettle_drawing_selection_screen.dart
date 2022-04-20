@@ -160,7 +160,6 @@ class _KettleDrawingSelectionScreenState extends State<KettleDrawingSelectionScr
                                           ),
                                         ),
                                       ),
-                                      const SizedBox(height: 10,),
                                       const Padding(
                                         padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                                         child: Divider(
@@ -168,8 +167,6 @@ class _KettleDrawingSelectionScreenState extends State<KettleDrawingSelectionScr
                                           thickness: 2,
                                         ),
                                       ),
-                                      const SizedBox(height: 10,),
-                                      const Text('Наименование чертежа:'),
                                       Text(kettleDrawing.kettleDrawingName,
                                         textAlign: TextAlign.start,
                                         style: const TextStyle(
