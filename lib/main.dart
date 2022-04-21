@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Screens/FlatItemsScreens/flat_item_drawing_view_screen.dart';
+import 'Screens/HouseholdItemsScreens/household_items_drawing_selection_screen.dart';
+import 'Screens/HouseholdItemsScreens/household_items_drawing_view_screen.dart';
 import 'Screens/KettleScreens/kettle_drawing_selection_screen.dart';
 import 'Screens/KettleScreens/kettle_drawing_view_screen.dart';
 import 'Screens/PanScreens/pan_drawing_selection_screen.dart';
@@ -47,7 +49,8 @@ class _SibTProductDesignAppState extends State<SibTProductDesignApp> {
         KettleDrawingSelectionScreen.routeName: (context) => const KettleDrawingSelectionScreen(),
         KettleDrawingViewScreen.routeName: (context) => const KettleDrawingViewScreen(),
         FlatItemsDrawingViewScreen.routeName: (context) => const FlatItemsDrawingViewScreen(),
-
+        HouseholdItemsDrawingSelectionScreen.routeName: (context) => const HouseholdItemsDrawingSelectionScreen(),
+        HouseholdItemsDrawingViewScreen.routeName: (context) => const HouseholdItemsDrawingViewScreen(),
       },
     );
   }
