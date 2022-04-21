@@ -15,17 +15,23 @@ class _HouseholdItemsSelectionState extends State<HouseholdItemsSelection> {
   get pageName => 'Хозяйственные\n изделия';
 
   // Переменне
-  bool _isHouseholdItemsShapeDisable=true;// Переменная активности списка формы изделия
-  bool _isHouseholdItemsSizeDisable=true;// Переменная активности списка формы изделия
+  // bool _isSecondListDisable=true;// Переменная активности второго списка
+  bool _isSecondListVisible=false;// Переменная активности второго списка
+
+  // bool _isThirdListDisable=true;// Переменная активности третьего списка
+  bool _isThirdListVisible=false;// Переменная активности третьего списка
+
   bool _isButtonVisible = false;// Переменная видимости кнопки
-  List <String> householdItemsShapeList = <String>['...'];// Переменная для определения необходимого списка формы корпуса
-  List <String> householdItemsSizeList = <String>['...'];// Переменная для определения необходимого списка вместимости изделия
-  String householdItemsTypeValue = '...';// Переменная для хранения выбранного значения в списке группы изделий
-  String householdItemsShapeValue = '...';// Переменная для хранения выбранного значения в списке формы корпуса
-  String householdItemsSizeValue = '...';// Переменная для хранения выбранного значения в списке вместимости изделия
+  List <String> secondList = <String>['...'];// Переменная для определения необходимого второго
+  List <String> thirdList = <String>['...'];// Переменная для определения необходимого третьего
+  String firstListValue = '...';// Переменная для хранения выбранного значения в списке группы изделий
+  String secondListValue = '...';// Переменная для хранения выбранного значения в списке формы корпуса
+  String thirdListValue = '...';// Переменная для хранения выбранного значения в списке вместимости изделия
   String householdItemsArt = '';// Переменная для хранения артикула выбранного изделия
   String householdItemsName = '';// Переменная для хранения полного наименования выбранного изделия
 
+  String secondListHeader = '';// Переменная заголовка второго спска
+  String thirdListHeader = '';// Переменная заголовка третьего спска
 
   @override
   Widget build(BuildContext context) {
@@ -48,160 +54,157 @@ class _HouseholdItemsSelectionState extends State<HouseholdItemsSelection> {
                     const SizedBox(height: 50,),// Отступ по вертикали
                     const Text('Выберите тип изделия:'),
                     DropdownButton(
-                      value: householdItemsTypeValue,
-                      items: listOfHouseholdItemsTypes.map<DropdownMenuItem<String>>((String value) {
+                      value: firstListValue,
+                      items: firstList.map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
                           child: Text(value),
                         );}).toList(),
                       onChanged: (String? newValue){ setState(() {
-                        householdItemsTypeValue = newValue!;
+                        firstListValue = newValue!;
                         if (newValue == '...') {
-                          householdItemsShapeValue = '...';
-                          householdItemsSizeValue = '...';
-                          _isHouseholdItemsShapeDisable = true;
-                          _isHouseholdItemsSizeDisable = true;
+                          secondListValue = '...';
+                          thirdListValue = '...';
+                          _isSecondListVisible = false;
+                          _isThirdListVisible=false;
                           _isButtonVisible = false;
+                          secondListHeader='';
+                          thirdListHeader = '';
                         }
                         else if (newValue == 'Бак'){
-                          householdItemsShapeList=tanksSizeList;
-                          workWithFirstDropButton();
+                          secondList=secondListForTanks;
+                          firstListWorkWithTypeAndSize();
+                          secondListHeader='Выберите вместимость';
                         }
                         else if (newValue == 'Ведро'){
-                          householdItemsShapeList=bucketsShapesList;
-                          workWithFirstDropButton();
+                          secondList=secondListForBuckets;
+                          firstListWorkWithTypeAndSize();
+                          secondListHeader='Выберите форму корпуса';
                         }
                         else if (newValue == 'Ковш'){
-                          householdItemsShapeList=ladlesShapesList;
-                          workWithFirstDropButton();
+                          secondList=secondListForLadles;
+                          firstListWorkWithTypeAndSize();
+                          secondListHeader='Выберите форму корпуса';
                         }
                         else if (newValue == 'Кружка'){
-                          householdItemsShapeList=mugsSizeList;
-                          workWithFirstDropButton();
+                          secondList=secondListForMugs;
+                          firstListWorkWithTypeAndSize();
+                          secondListHeader='Выберите вместимость';
                         }
                         else if (newValue == 'Дуршлаг'){
-                          // householdItemsShapeList=mugsSizeList;
-                          workWithFirstDropButton();
+                          firstListWorkOnlyType();
                         }
                         else if (newValue == 'Бидон'){
-                          // householdItemsShapeList=mugsSizeList;
-                          workWithFirstDropButton();
+                          firstListWorkOnlyType();
                         }
                         else if (newValue == 'Горшок ночной'){
-                          // householdItemsShapeList=mugsSizeList;
-                          workWithFirstDropButton();
+                          firstListWorkOnlyType();
                         }
                       });},
                     ),// Список выбора типа кастрюли
                     const SizedBox(height: 50,),
-                    const Text('Выберите форму корпуса:'),
-                    DropdownButton(
-                      value: householdItemsShapeValue,
-                      items: householdItemsShapeList.map<DropdownMenuItem<String>>((String value) {return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );}).toList(),
-                      onChanged: _isHouseholdItemsShapeDisable? null : (String? newValue1){
-                        setState(() {
-                          householdItemsShapeValue = newValue1!;
-                          if (householdItemsShapeValue == '...') {
-                            householdItemsSizeValue = '...';
-                            _isButtonVisible = false;
-                            _isHouseholdItemsSizeDisable=true;
-                          }
-                          else if (householdItemsTypeValue == 'Бак' && householdItemsShapeValue == '20,0 л'){
-                            // householdItemsSizeList=householdItemsCylindricalWithRimSizeList;
-                            workWithSecondDropButton();
-                          }
-                          else if (householdItemsTypeValue == 'Бак' && householdItemsShapeValue == '32,0 л'){
-                            // householdItemsSizeList=householdItemsSphericalWithRimSizeList;
-                            workWithSecondDropButton();
-                          }
-                          else if (householdItemsTypeValue == 'Бак' && householdItemsShapeValue == '40,0 л'){
-                            // householdItemsSizeList=householdItemsCylindricalWithoutRimSizeList;
-                            workWithSecondDropButton();
-                          }
-                          else if (householdItemsTypeValue == 'Ведро' && householdItemsShapeValue == 'Сварное'){
-                            // householdItemsSizeList=householdItemsSphericalWithoutRimSizeList;
-                            workWithSecondDropButton();
-                          }
-                          else if (householdItemsTypeValue == 'Ведро' && householdItemsShapeValue == 'Цельнотянутое'){
-                            householdItemsSizeList=stampedBucketSizeList;
-                            workWithSecondDropButton();
-                          }
-                          else if (householdItemsTypeValue == 'Ковш' && householdItemsShapeValue == 'без крышки'){
-                            householdItemsSizeList=ladlesSizeList;
-                            workWithSecondDropButton();
-                          }
-                          else if (householdItemsTypeValue == 'Ковш' && householdItemsShapeValue == 'с крышкой'){
-                            householdItemsSizeList=ladlesSizeList;
-                            workWithSecondDropButton();
-                          }
-                          else if (householdItemsTypeValue == 'Кружка' && householdItemsShapeValue == '0,25 л'){
-                            // householdItemsSizeList=poznicaSizeList;
-                            workWithSecondDropButton();
-                          }
-                          else if (householdItemsTypeValue == 'Кружка' && householdItemsShapeValue == '0,4 л'){
-                            // householdItemsSizeList=poznicaSizeList;
-                            workWithSecondDropButton();
-                          }
-                          else if (householdItemsTypeValue == 'Кружка' && householdItemsShapeValue == '1,0 л'){
-                            // householdItemsSizeList=poznicaSizeList;
-                            workWithSecondDropButton();
-                          }
+                    Text(secondListHeader),
+                    Visibility(
+                      visible: _isSecondListVisible,
+                      child: DropdownButton(
+                        value: secondListValue,
+                        items: secondList.map<DropdownMenuItem<String>>((String value) {return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );}).toList(),
+                          onChanged: (String? newValue1){
+                          setState(() {
+                            secondListValue = newValue1!;
+                            if (secondListValue == '...') {
+                              thirdListValue = '...';
+                              _isButtonVisible = false;
+                              // _isThirdListDisable=true;
+                              _isThirdListVisible=false;
 
-                        });
-                      },
+                            }
+                            else if (firstListValue == 'Бак' && secondListValue == '20,0 л'){
+                              secondListWorkWithTypeAndSize();
+                            }
+                            else if (firstListValue == 'Бак' && secondListValue == '32,0 л'){
+                              secondListWorkWithTypeAndSize();
+                            }
+                            else if (firstListValue == 'Бак' && secondListValue == '40,0 л'){
+                              secondListWorkWithTypeAndSize();
+                            }
+                            else if (firstListValue == 'Ведро' && secondListValue == 'Сварное'){
+                              secondListWorkWithTypeAndSize();
+                            }
+                            else if (firstListValue == 'Ведро' && secondListValue == 'Цельнотянутое'){
+                              thirdList=thirdListForStampedBucket;
+                              secondListWorkWithTypeShapeAndSize();
+                            }
+                            else if (firstListValue == 'Ковш' && secondListValue == 'без крышки'){
+                              thirdList=thirdListForLadles;
+                              secondListWorkWithTypeShapeAndSize();
+                            }
+                            else if (firstListValue == 'Ковш' && secondListValue == 'с крышкой'){
+                              thirdList=thirdListForLadles;
+                              secondListWorkWithTypeShapeAndSize();
+                            }
+                            else if (firstListValue == 'Кружка' && secondListValue == '0,25 л'){
+                              secondListWorkWithTypeAndSize();
+                            }
+                            else if (firstListValue == 'Кружка' && secondListValue == '0,4 л'){
+                              secondListWorkWithTypeAndSize();
+                            }
+                            else if (firstListValue == 'Кружка' && secondListValue == '1,0 л'){
+                              secondListWorkWithTypeAndSize();
+                            }
+                          });
+                        },
+                      ),
                     ),// Список выбора формы корпуса
                     const SizedBox(height: 50,),
-                    const Text('Выберите вместимость:'),
-                    DropdownButton(
-                      value: householdItemsSizeValue,
-                      items: householdItemsSizeList.map<DropdownMenuItem<String>>((String value) {return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );}).toList(),
-                      onChanged: _isHouseholdItemsSizeDisable? null : (String? newValue2){
-                        setState(() {
-                          householdItemsSizeValue = newValue2!;
-                          if (householdItemsSizeValue == '...') {_isButtonVisible = false;}
-                          else {_isButtonVisible=true;}
-                        });
-                      },
+                    Text(thirdListHeader),
+                    Visibility(
+                      visible: _isThirdListVisible,
+                      child: DropdownButton(
+                        value: thirdListValue,
+                        items: thirdList.map<DropdownMenuItem<String>>((String value) {return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );}).toList(),
+                        onChanged: (String? newValue2){
+                          setState(() {
+                            thirdListValue = newValue2!;
+                            if (thirdListValue == '...') {_isButtonVisible = false;}
+                            else {_isButtonVisible=true;}
+                          });
+                        },
+                      ),
                     ),// Список выбора вместимости изделия
-                    const SizedBox(height: 50,),
-                    Text('Выбран тип кастрюли: "$householdItemsTypeValue",',
-                      textAlign: TextAlign.start,
-                    ),// Вывод выбранного типа кастрюли
-                    Text('Выбрана форма: "$householdItemsShapeValue"',
-                      textAlign: TextAlign.center,),// Вывод выбранной формы изделия
-                    Text('Выбрана вместимость: "$householdItemsSizeValue"',
-                      textAlign: TextAlign.center,),// Вывод выбранной вместимости изделия
                     const SizedBox(height: 50,),
                     Visibility(
                       visible: _isButtonVisible,
                       child: SizedBox(width:250, height:55,
                         child: ElevatedButton(
                           onPressed: () {
-                            if (householdItemsTypeValue == 'Бак' && householdItemsShapeValue == '20,0 л') {householdItemsArt= '2827';householdItemsName=art2827;}
-                            else if (householdItemsTypeValue == 'Бак' && householdItemsShapeValue == '32,0 л') {householdItemsArt= '2829';householdItemsName=art2829;}
-                            else if (householdItemsTypeValue == 'Бак' && householdItemsShapeValue == '40,0 л') {householdItemsArt= '2833';householdItemsName=art2833;}
-                            else if (householdItemsTypeValue == 'Бак' && householdItemsShapeValue == '40,0 л') {householdItemsArt= '2833';householdItemsName=art2833;}
-                            else if (householdItemsTypeValue == 'Ведро' && householdItemsShapeValue == 'Сварное') {householdItemsArt= '1224';householdItemsName=art1224;}
-                            else if (householdItemsTypeValue == 'Ведро' && householdItemsShapeValue == 'Цельнотянутое'&& householdItemsSizeValue == '9,0 л') {householdItemsArt= '1222.Ц';householdItemsName=art1222C;}
-                            else if (householdItemsTypeValue == 'Ведро' && householdItemsShapeValue == 'Цельнотянутое'&& householdItemsSizeValue == '12,0 л') {householdItemsArt= '1224.Ц';householdItemsName=art1224C;}
-                            else if (householdItemsTypeValue == 'Ковш' && householdItemsShapeValue == 'без крышки'&& householdItemsSizeValue == '2,0 л') {householdItemsArt= '2011';householdItemsName=art2011;}
-                            else if (householdItemsTypeValue == 'Ковш' && householdItemsShapeValue == 'с крышкой'&& householdItemsSizeValue == '2,0 л') {householdItemsArt= '2111';householdItemsName=art2111;}
-                            else if (householdItemsTypeValue == 'Кружка' && householdItemsShapeValue == '0,25 л') {householdItemsArt= '0102';householdItemsName=art0102;}
-                            else if (householdItemsTypeValue == 'Кружка' && householdItemsShapeValue == '0,4 л') {householdItemsArt= '0103';householdItemsName=art0103;}
-                            else if (householdItemsTypeValue == 'Кружка' && householdItemsShapeValue == '1,0 л') {householdItemsArt= '0207';householdItemsName=art0207;}
-                            else if (householdItemsTypeValue == 'Дуршлаг') {householdItemsArt= '1406';householdItemsName=art1406;}
-                            else if (householdItemsTypeValue == 'Бидон') {householdItemsArt= '0612';householdItemsName=art0612;}
-                            else if (householdItemsTypeValue == 'Горшок ночной') {householdItemsArt= '0908';householdItemsName=art0908;}
+                            if (firstListValue == 'Бак' && secondListValue == '20,0 л') {householdItemsArt= '2827';householdItemsName=art2827;}
+                            else if (firstListValue == 'Бак' && secondListValue == '32,0 л') {householdItemsArt= '2829';householdItemsName=art2829;}
+                            else if (firstListValue == 'Бак' && secondListValue == '40,0 л') {householdItemsArt= '2833';householdItemsName=art2833;}
+                            else if (firstListValue == 'Бак' && secondListValue == '40,0 л') {householdItemsArt= '2833';householdItemsName=art2833;}
+                            else if (firstListValue == 'Ведро' && secondListValue == 'Сварное') {householdItemsArt= '1224';householdItemsName=art1224;}
+                            else if (firstListValue == 'Ведро' && secondListValue == 'Цельнотянутое'&& thirdListValue == '9,0 л') {householdItemsArt= '1222.Ц';householdItemsName=art1222C;}
+                            else if (firstListValue == 'Ведро' && secondListValue == 'Цельнотянутое'&& thirdListValue == '12,0 л') {householdItemsArt= '1224.Ц';householdItemsName=art1224C;}
+                            else if (firstListValue == 'Ковш' && secondListValue == 'без крышки'&& thirdListValue == '1,5 л') {householdItemsArt= '2008';householdItemsName=art2008;}
+                            else if (firstListValue == 'Ковш' && secondListValue == 'без крышки'&& thirdListValue == '2,0 л') {householdItemsArt= '2011';householdItemsName=art2011;}
+                            else if (firstListValue == 'Ковш' && secondListValue == 'с крышкой'&& thirdListValue == '1,5 л') {householdItemsArt= '2108';householdItemsName=art2108;}
+                            else if (firstListValue == 'Ковш' && secondListValue == 'с крышкой'&& thirdListValue == '2,0 л') {householdItemsArt= '2111';householdItemsName=art2111;}
+                            else if (firstListValue == 'Кружка' && secondListValue == '0,25 л') {householdItemsArt= '0102';householdItemsName=art0102;}
+                            else if (firstListValue == 'Кружка' && secondListValue == '0,4 л') {householdItemsArt= '0103';householdItemsName=art0103;}
+                            else if (firstListValue == 'Кружка' && secondListValue == '1,0 л') {householdItemsArt= '0207';householdItemsName=art0207;}
+                            else if (firstListValue == 'Дуршлаг') {householdItemsArt= '1406';householdItemsName=art1406;}
+                            else if (firstListValue == 'Бидон') {householdItemsArt= '0612';householdItemsName=art0612;}
+                            else if (firstListValue == 'Горшок ночной') {householdItemsArt= '0908';householdItemsName=art0908;}
                             Navigator.pushNamed(context, HouseholdItemsDrawingSelectionScreen.routeName, arguments: PassedFromHouseholdItemsSelectionScreenArguments(
-                              householdItemsTypeValue,
-                              householdItemsShapeValue,
-                              householdItemsSizeValue,
+                              firstListValue,
+                              secondListValue,
+                              thirdListValue,
                               householdItemsArt,
                               householdItemsName,
                             ),
@@ -235,17 +238,50 @@ class _HouseholdItemsSelectionState extends State<HouseholdItemsSelection> {
     );
   }
 
-  void workWithFirstDropButton() {
-    householdItemsShapeValue = '...';
-    householdItemsSizeValue = '...';
-    _isHouseholdItemsShapeDisable = false;
-    _isHouseholdItemsSizeDisable= true;
-    _isButtonVisible=false;
+  void secondListWorkWithTypeShapeAndSize() {
+    _isButtonVisible = false;
+    thirdListValue = '...';
+    _isThirdListVisible=true;
+    thirdListHeader = 'Выберите вместимость';
   }
 
-  void workWithSecondDropButton() {
-    householdItemsSizeValue = '...';
-    _isHouseholdItemsSizeDisable = false;
-    _isButtonVisible=false;
+  void secondListWorkWithTypeAndSize() {
+    _isButtonVisible = true;
+    thirdListValue = '...';
+    _isThirdListVisible=false;
+    thirdListHeader = '';
   }
+
+  void firstListWorkWithTypeAndSize() {
+    _isButtonVisible=false;
+    secondListValue = '...';
+    thirdListValue = '...';
+    _isSecondListVisible = true;
+    _isThirdListVisible=false;
+    thirdListHeader = '';
+  }
+
+  void firstListWorkOnlyType() {
+    _isButtonVisible=true;
+    secondListValue = '...';
+    thirdListValue = '...';
+    // _isSecondListDisable = true;
+    _isSecondListVisible = false;
+    // _isThirdListDisable= true;
+    _isThirdListVisible=false;
+  }
+
+  // void workWithFirstDropButton() {
+  //   householdItemsShapeValue = '...';
+  //   householdItemsSizeValue = '...';
+  //   _isHouseholdItemsShapeDisable = false;
+  //   _isHouseholdItemsSizeDisable= true;
+  //   _isButtonVisible=false;
+  // }
+  //
+  // void workWithSecondDropButton() {
+  //   householdItemsSizeValue = '...';
+  //   _isHouseholdItemsSizeDisable = false;
+  //   _isButtonVisible=false;
+  // }
 }

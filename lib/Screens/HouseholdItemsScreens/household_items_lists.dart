@@ -1,27 +1,14 @@
-List <String> listOfHouseholdItemsTypes = <String>['...','Бак','Ведро','Ковш','Кружка','Дуршлаг','Бидон','Горшок ночной',];
+List <String> firstList = <String>['...','Бак','Ведро','Ковш','Кружка','Дуршлаг','Бидон','Горшок ночной',];
+
+List <String> secondListForTanks = <String>['...','20,0 л','32,0 л','40,0 л',]; // Литраж баков
+List <String> secondListForBuckets = <String>['...','Сварное','Цельнотянутое',]; // Форма корпуса ведра
+List <String> secondListForLadles = <String>['...','без крышки','с крышкой',]; // Форма корпуса ковша
+List <String> secondListForMugs = <String>['...','0,25 л','0,4 л','1,0 л',]; // Литраж кружек
+
+List <String> thirdListForStampedBucket = <String>['...','9,0 л','12,0 л',]; // Литраж ведер цельнотянутых
+List <String> thirdListForLadles = <String>['...','1,5 л','2,0 л',]; // Литраж ковшей
 
 
-List <String> bucketsShapesList = <String>['...','Сварное','Цельнотянутое',]; // Форма корпуса ведра
-List <String> ladlesShapesList = <String>['...','без крышки','с крышкой',]; // Форма корпуса ковша
-
-
-// List <String> typesOfHouseholdItemsWithoutRimShapesList = <String>['...','Цилиндрическая','Сферическая','Грушевидная','Позница',]; // Типы форм кастрюль без ободка
-//
-// List <String> householdItemsCylindricalWithRimSizeList = <String>['...','2,0 л','3,0 л','4,0 л','5,5 л',]; // Литраж кастрюль цилиндрических с ободком
-// List <String> householdItemsSphericalWithRimSizeList = <String>['...','2,0 л','3,0 л','4,0 л','5,5 л',]; // Литраж кастрюль сферических с ободком
-
-// Литражи:
-
-List <String> tanksSizeList = <String>['...','20,0 л','32,0 л','40,0 л',]; // Литраж баков
-List <String> stampedBucketSizeList = <String>['...','9,0 л','12,0 л',]; // Литраж ведер цельнотянутых
-List <String> ladlesSizeList = <String>['...','1,5 л','2,0 л',]; // Литраж ковшей
-List <String> mugsSizeList = <String>['...','0,25 л','0,4 л','1,0 л',]; // Литраж кружек
-
-// List <String> householdItemsCylindricalWithoutRimSizeList = <String>['...','1,5 л','2,0 л','3,5 л','5,5 л','8,0 л','9,0 л','12,0 л','14,0 л',]; // Литраж кастрюль цилиндрических без ободка
-// List <String> householdItemsSphericalWithoutRimSizeList = <String>['...','4,0 л','5,5 л','8,0 л',]; // Литраж кастрюль сферических без ободка
-// List <String> householdItemsPearShapedWithoutRimSizeList = <String>['...','4,0 л','5,5 л','8,0 л',]; // Литраж кастрюль грушевидных без ободка
-// List <String> poznicaSizeList = <String>['...','8,0 л (2 вставки)','9,0 л (3 вставки)','12,0 л (4 вставки)',]; // Литраж позниц
-//
 String art2827= 'Бак 20,0л';
 String art2829= 'Бак 32,0л';
 String art2833= 'Бак 40,0л';

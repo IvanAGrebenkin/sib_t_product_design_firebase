@@ -132,14 +132,6 @@ class _PanSelectionState extends State<PanSelection> {
                       },
                     ),// Список выбора вместимости изделия
                     const SizedBox(height: 50,),
-                    Text('Выбран тип кастрюли: "$panTypeValue",',
-                      textAlign: TextAlign.start,
-                    ),// Вывод выбранного типа кастрюли
-                    Text('Выбрана форма: "$panShapeValue"',
-                      textAlign: TextAlign.center,),// Вывод выбранной формы изделия
-                    Text('Выбрана вместимость: "$panSizeValue"',
-                      textAlign: TextAlign.center,),// Вывод выбранной вместимости изделия
-                    const SizedBox(height: 50,),
                     Visibility(
                       visible: _isButtonVisible,
                       child: SizedBox(width:250, height:55,
