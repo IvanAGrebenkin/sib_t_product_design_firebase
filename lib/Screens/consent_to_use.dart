@@ -37,7 +37,7 @@ class _ConsentToUseState extends State<ConsentToUse> {
                 child: ElevatedButton(
                   style: elevatedButtonDecoration,// Оформление кнопки
                   onPressed: _isDisable? null : (){Navigator.pushNamed(context, '/group_selection_screen');},// Действие по нажатию
-                  child: const Text('Поехали!',
+                  child: const Text('Принять',
                     style: TextStyle(
                       fontSize: 18,
                     ),// Стиль текста
