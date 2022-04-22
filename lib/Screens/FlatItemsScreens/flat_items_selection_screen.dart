@@ -51,11 +51,6 @@ class _FlatItemsSelectionState extends State<FlatItemsSelection> {
         child: Column(
           children: [
             const SizedBox(height:20,),
-            // Text(argsFromPanSelectionScreen.panName),// Вывод наименования изделия
-            // const SizedBox(height:10,),
-            // Text('Арт. ${argsFromPanSelectionScreen.art}'),
-            // const SizedBox(height:20,),
-            // const SizedBox(height:20,),
             Expanded(
               child: SizedBox(height: 500,
                 child: ListView.builder(

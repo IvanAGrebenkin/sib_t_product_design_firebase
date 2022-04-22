@@ -216,42 +216,6 @@ class _HouseholdItemsDrawingSelectionScreenState extends State<HouseholdItemsDra
     else if (currentArt == '0612'){householdItemsDrawings=householdItemsDrawings0612;}
     else if (currentArt == '0908'){householdItemsDrawings=householdItemsDrawings0908;}
 
-
-
-
-
-
-
-
-
-
-    // else if (currentArt == '1612'){panDrawings=panDrawings1612;}
-    // else if (currentArt == '1617'){panDrawings=panDrawings1617;}
-    // else if (currentArt == '1620'){panDrawings=panDrawings1620;}
-    // else if (currentArt == '1622'){panDrawings=panDrawings1622;}
-    // else if (currentArt == '1624'){panDrawings=panDrawings1624;}
-    // else if (currentArt == '1626'){panDrawings=panDrawings1626;}
-    // else if (currentArt == '1912'){panDrawings=panDrawings1912;}
-    // else if (currentArt == '1917'){panDrawings=panDrawings1917;}
-    // else if (currentArt == '1920'){panDrawings=panDrawings1920;}
-    // else if (currentArt == '2512'){panDrawings=panDrawings2512;}
-    // else if (currentArt == '2517'){panDrawings=panDrawings2517;}
-    // else if (currentArt == '2520'){panDrawings=panDrawings2520;}
-    // else if (currentArt == '1720'){panDrawings=panDrawings1720;}
-    // else if (currentArt == '1722'){panDrawings=panDrawings1722;}
-    // else if (currentArt == '1724'){panDrawings=panDrawings1724;}
-    // else if (currentArt == 'MD161'){panDrawings=panDrawingsMD161;}
-    // else if (currentArt == 'MD181'){panDrawings=panDrawingsMD181;}
-    // else if (currentArt == 'MD201'){panDrawings=panDrawingsMD201;}
-    // else if (currentArt == 'MD221'){panDrawings=panDrawingsMD221;}
-    // else if (currentArt == 'MC161'){panDrawings=panDrawingsMC161;}
-    // else if (currentArt == 'MC181'){panDrawings=panDrawingsMC181;}
-    // else if (currentArt == 'MC201'){panDrawings=panDrawingsMC201;}
-    // else if (currentArt == 'MC221'){panDrawings=panDrawingsMC221;}
-
-
-
-
     return Scaffold(
       appBar: panDrawingSelectionScreenAppBar(context, pageName),
       drawer: navDrawer(context),
@@ -260,9 +224,17 @@ class _HouseholdItemsDrawingSelectionScreenState extends State<HouseholdItemsDra
         child: Column(
           children: [
             const SizedBox(height:20,),
-            Text(argsFromHouseholdItemsSelectionScreen.householdItemsName),// Вывод наименования изделия
+            Text(argsFromHouseholdItemsSelectionScreen.householdItemsName,
+              style: const TextStyle(
+                fontSize: 18,
+              ),
+            ),// Вывод наименования изделия
             const SizedBox(height:10,),
-            Text('Арт. ${argsFromHouseholdItemsSelectionScreen.householdItemsArt}'),
+            Text('Арт. ${argsFromHouseholdItemsSelectionScreen.householdItemsArt}',
+              style: const TextStyle(
+                fontSize: 16,
+              ),
+            ),
             const SizedBox(height:10,),
             Expanded(
               child: SizedBox(height: 500,

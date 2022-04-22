@@ -353,9 +353,6 @@ class _PanDrawingSelectionScreenState extends State<PanDrawingSelectionScreen> {
     else if (currentArt == 'MC201'){panDrawings=panDrawingsMC201;}
     else if (currentArt == 'MC221'){panDrawings=panDrawingsMC221;}
 
-
-
-
     return Scaffold(
         appBar: panDrawingSelectionScreenAppBar(context, pageName),
         drawer: navDrawer(context),
@@ -364,9 +361,15 @@ class _PanDrawingSelectionScreenState extends State<PanDrawingSelectionScreen> {
           child: Column(
             children: [
               const SizedBox(height:20,),
-              Text(argsFromPanSelectionScreen.panName),// Вывод наименования изделия
+              Text(argsFromPanSelectionScreen.panName,
+                style: const TextStyle(
+                  fontSize: 18,
+                ),),// Вывод наименования изделия
               const SizedBox(height:10,),
-              Text('Арт. ${argsFromPanSelectionScreen.art}'),
+              Text('Арт. ${argsFromPanSelectionScreen.art}',
+                style: const TextStyle(
+                  fontSize: 16,
+                ),),
               const SizedBox(height:10,),
               Expanded(
                 child: SizedBox(height: 500,

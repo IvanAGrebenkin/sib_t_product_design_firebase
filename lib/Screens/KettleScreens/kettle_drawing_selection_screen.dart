@@ -117,9 +117,15 @@ class _KettleDrawingSelectionScreenState extends State<KettleDrawingSelectionScr
         child: Column(
           children: [
             const SizedBox(height:20,),
-            Text(argsFromKettleSelectionScreen.kettleName),// Вывод наименования изделия
+            Text(argsFromKettleSelectionScreen.kettleName,
+              style: const TextStyle(
+                fontSize: 18,
+              ),),// Вывод наименования изделия
             const SizedBox(height:10,),
-            Text('Арт. ${argsFromKettleSelectionScreen.kettleArt}'),
+            Text('Арт. ${argsFromKettleSelectionScreen.kettleArt}',
+              style: const TextStyle(
+                fontSize: 16,
+              ),),
             const SizedBox(height:10,),
             Expanded(
               child: SizedBox(height: 500,
