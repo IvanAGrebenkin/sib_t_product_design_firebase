@@ -77,6 +77,10 @@ flutter:
    - assets/drawings/lids/00207/
    - assets/drawings/lids/02713/
    - assets/drawings/lids/02716/
+   - assets/drawings/lids/02827/
+   - assets/drawings/lids/02829/
+   - assets/drawings/lids/02108/
+   - assets/drawings/lids/00908/
 
 
    - assets/drawings/pans/1607/
@@ -120,6 +124,22 @@ flutter:
    - assets/drawings/kettles/2714/
    - assets/drawings/kettles/2716/
    - assets/drawings/kettles/2717/
+   - assets/drawings/household_items/2827/
+   - assets/drawings/household_items/2829/
+   - assets/drawings/household_items/2833/
+   - assets/drawings/household_items/1224/
+   - assets/drawings/household_items/1222C/
+   - assets/drawings/household_items/1224C/
+   - assets/drawings/household_items/2008/
+   - assets/drawings/household_items/2011/
+   - assets/drawings/household_items/2108/
+   - assets/drawings/household_items/0102/
+   - assets/drawings/household_items/0103/
+   - assets/drawings/household_items/0207/
+   - assets/drawings/household_items/1406/
+   - assets/drawings/household_items/0612/
+   - assets/drawings/household_items/0908/
+
 
 
 

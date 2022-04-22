@@ -93,6 +93,7 @@ class _HouseholdItemsSelectionState extends State<HouseholdItemsSelection> {
                         }
                         else if (newValue == 'Дуршлаг'){
                           firstListWorkOnlyType();
+
                         }
                         else if (newValue == 'Бидон'){
                           firstListWorkOnlyType();
@@ -265,10 +266,10 @@ class _HouseholdItemsSelectionState extends State<HouseholdItemsSelection> {
     _isButtonVisible=true;
     secondListValue = '...';
     thirdListValue = '...';
-    // _isSecondListDisable = true;
     _isSecondListVisible = false;
-    // _isThirdListDisable= true;
     _isThirdListVisible=false;
+    secondListHeader='';
+    thirdListHeader = '';
   }
 
   // void workWithFirstDropButton() {
