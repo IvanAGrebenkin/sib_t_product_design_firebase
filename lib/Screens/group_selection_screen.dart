@@ -18,11 +18,17 @@ class _GroupSelectionScreenState extends State<GroupSelectionScreen> {
         drawer: navDrawer(context),
         body: Container(
           decoration: backgroundOfOthersScreen,// Задание фонового изображения
-          child: SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minWidth: MediaQuery.of(context).size.width,
+              minHeight: MediaQuery.of(context).size.height,
+            ),// Ограничения в соответствии с разрешением экрана устройства
             child: Center(
               child: Column(
                 children: [
-                  const SizedBox(height: 40,),// Отступ по вертикали
+                  const Expanded(
+                      flex: 1,
+                      child:SizedBox()),// Отступ по вертикали
                   SizedBox(height: 126,width: 178,
                     child: ElevatedButton(
                       style: groupButtonDecoration,
@@ -41,7 +47,9 @@ class _GroupSelectionScreenState extends State<GroupSelectionScreen> {
                       ),
                     ),
                   ),// Кнопка выбора группы кастрюль
-                  const SizedBox(height: 20,),// Отступ по вертикали
+                  const Expanded(
+                      flex: 1,
+                      child:SizedBox()),// Отступ по вертикали
                   SizedBox(height: 126,width: 178,
                     child: ElevatedButton(
                       style: groupButtonDecoration,
@@ -60,7 +68,9 @@ class _GroupSelectionScreenState extends State<GroupSelectionScreen> {
                       ),
                     ),
                   ),// Кнопка выбора группы чайников
-                  const SizedBox(height: 20,),// Отступ по вертикали
+                  const Expanded(
+                      flex: 1,
+                      child:SizedBox()),// Отступ по вертикали
                   SizedBox(height: 126,width: 178,
                     child: ElevatedButton(
                       style: groupButtonDecoration,
@@ -79,7 +89,9 @@ class _GroupSelectionScreenState extends State<GroupSelectionScreen> {
                       ),
                     ),
                   ),// Кнопка выбора группы Хозяйственные изделия
-                  const SizedBox(height: 20,),// Отступ по вертикали
+                  const Expanded(
+                      flex: 1,
+                      child:SizedBox()),// Отступ по вертикали
                   SizedBox(height: 126,width: 178,
                     child: ElevatedButton(
                       style: groupButtonDecoration,
@@ -98,7 +110,9 @@ class _GroupSelectionScreenState extends State<GroupSelectionScreen> {
                       ),
                     ),
                   ),// Кнопка выбора группы Плоские изделия
-                  const SizedBox(height: 80,),// Отступ по вертикали
+                  const Expanded(
+                      flex: 1,
+                      child:SizedBox()),// Отступ по вертикали
                 ],
               ),
             ),

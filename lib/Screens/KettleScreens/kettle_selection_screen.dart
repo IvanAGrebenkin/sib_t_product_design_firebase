@@ -38,13 +38,12 @@ class _KettleSelectionState extends State<KettleSelection> {
                   width: widthOfButton(),// Ширина кнопки
                   child: ElevatedButton(
                     style: kettlesButtonDecoration,//Оформление границ и фона кнопки
-                    // style: kettlesButtonDecoration,//Оформление границ и фона кнопки
                     child: Column(
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: topPadding(),// Отступ над изображением внутри кнопки
-                            child: Image.asset ('assets/images/kettle_group.png',),// Файл изображения
+                            padding: const EdgeInsets.symmetric(vertical: 15),// Отступ над изображением внутри кнопки
+                            child: Image.asset ('assets/images/2707.png',),// Файл изображения
                           ),
                         ),// Изображение изделия
                         const Text('Чайник 1,0л (заварник)',
@@ -83,10 +82,10 @@ class _KettleSelectionState extends State<KettleSelection> {
                         Expanded(
                           child: Padding(
                             padding: topPadding(),// Отступ над изображением внутри кнопки
-                            child: Image.asset ('assets/images/kettle_group.png',),// Файл изображения
+                            child: Image.asset ('assets/images/2713.png',),// Файл изображения
                           ),
                         ),// Изображение изделия
-                        const Text('Чайник 3,5л\nс закатным дном',
+                        const Text('Чайник 3,5л',
                           textAlign: TextAlign.center,
                           style: kettleSelectionButtonTextStyle,
                         ),// Назавание изделия
@@ -161,7 +160,7 @@ class _KettleSelectionState extends State<KettleSelection> {
                         Expanded(
                           child: Padding(
                             padding: topPadding(),// Отступ над изображением внутри кнопки
-                            child: Image.asset ('assets/images/kettle_group.png',),// Файл изображения
+                            child: Image.asset ('assets/images/2716.png',),// Файл изображения
                           ),
                         ),// Изображение изделия
                         const Text('Чайник ц/т 3,5л',
@@ -198,7 +197,7 @@ class _KettleSelectionState extends State<KettleSelection> {
                         Expanded(
                           child: Padding(
                             padding: topPadding(),// Отступ над изображением внутри кнопки
-                            child: Image.asset ('assets/images/kettle_group.png',),// Файл изображения
+                            child: Image.asset ('assets/images/2717.png',),// Файл изображения
                           ),
                         ),// Изображение изделия
                         const Text('Чайник со свистком 3,0л',
