@@ -108,6 +108,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     width: 244,
                     child: Text(
                       errorText,
+                      textAlign: TextAlign.center,
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 17,
