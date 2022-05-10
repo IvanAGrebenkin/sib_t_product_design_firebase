@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../../Utils/decoration.dart';
 import '../../Utils/widgets.dart';
 import 'package:sib_t_product_design/Screens/HouseholdItemsScreens/household_items_lists.dart';
-
 import 'household_items_drawing_selection_screen.dart';
 
 class HouseholdItemsSelection extends StatefulWidget {
@@ -15,7 +14,6 @@ class _HouseholdItemsSelectionState extends State<HouseholdItemsSelection> {
   get pageName => 'Хозяйственные\n изделия';
 
   // Переменне
-  // bool _isSecondListDisable=true;// Переменная активности второго списка
   bool _isSecondListVisible=false;// Переменная активности второго списка
 
   // bool _isThirdListDisable=true;// Переменная активности третьего списка
