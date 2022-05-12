@@ -433,7 +433,6 @@ class _PanDrawingSelectionScreenState extends State<PanDrawingSelectionScreen> {
                                 child: InkWell(
                                   borderRadius: BorderRadius.circular(25.0),
                                   onTap: (){
-                                    // Navigator.pushNamed(context, '/pan_drawing_view_screen');
                                     Navigator.pushNamed(
                                       context,
                                       PanDrawingViewScreen.routeName,
@@ -456,5 +455,7 @@ class _PanDrawingSelectionScreenState extends State<PanDrawingSelectionScreen> {
         ),
       );
   }
+
+
 }
 
