@@ -1,5 +1,5 @@
-name: sib_t_product_design
-description: A new Flutter project.
+name: sib_t_product_design_firebase
+description: Application for viewing current drawings of products of the LLC "STALEMAL" enterprise (Novokuznetsk).
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.

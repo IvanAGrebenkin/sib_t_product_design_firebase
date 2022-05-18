@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sib_t_product_design/Screens/PanScreens/pan_drawing_selection_screen.dart';
-import 'package:sib_t_product_design/Screens/PanScreens/pan_lists.dart';
+import 'pan_drawing_selection_screen.dart';
+import '../../Utils/pan_and_kettle_list.dart';
 import '../../Utils/decoration.dart';
 import '../../Utils/widgets.dart';
 

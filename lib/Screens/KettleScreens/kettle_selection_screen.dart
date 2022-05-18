@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../Utils/decoration.dart';
 import '../../Utils/widgets.dart';
-import '../PanScreens/pan_lists.dart';
+import '../../Utils/pan_and_kettle_list.dart';
 import 'kettle_drawing_selection_screen.dart';
 
 class KettleSelection extends StatefulWidget {

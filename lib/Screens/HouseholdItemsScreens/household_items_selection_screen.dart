@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../Utils/decoration.dart';
 import '../../Utils/widgets.dart';
-import 'package:sib_t_product_design/Screens/HouseholdItemsScreens/household_items_lists.dart';
+import 'household_items_lists.dart';
 import 'household_items_drawing_selection_screen.dart';
 
 class HouseholdItemsSelection extends StatefulWidget {

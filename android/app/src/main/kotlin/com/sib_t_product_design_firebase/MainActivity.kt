@@ -1,4 +1,4 @@
-package com.example.sib_t_product_design
+package com.sib_t_product_design_firebase
 
 import io.flutter.embedding.android.FlutterActivity
 
