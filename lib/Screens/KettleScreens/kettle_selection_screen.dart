@@ -13,9 +13,9 @@ class KettleSelection extends StatefulWidget {
 class _KettleSelectionState extends State<KettleSelection> {
   get pageName => 'Чайники';
 
-  String kettleTypeValue = '...';// Переменная для хранения выбранного значения в списке группы изделий
-  String kettleShapeValue = '...';// Переменная для хранения выбранного значения в списке формы корпуса
-  String kettleSizeValue = '...';// Переменная для хранения выбранного значения в списке вместимости изделия
+  // String kettleTypeValue = '...';// Переменная для хранения выбранного значения в списке группы изделий
+  // String kettleShapeValue = '...';// Переменная для хранения выбранного значения в списке формы корпуса
+  // String kettleSizeValue = '...';// Переменная для хранения выбранного значения в списке вместимости изделия
   String kettleArt = '';// Переменная для хранения артикула выбранного изделия
   String kettleName = '';// Переменная для хранения полного наименования выбранного изделия
 
