@@ -14,7 +14,8 @@ import 'Screens/HouseholdItemsScreens/household_items_selection_screen.dart';
 import 'Screens/KettleScreens/kettle_selection_screen.dart';
 import 'Screens/PanScreens/pan_selection_screen.dart';
 
-void main() {
+
+void  main() {
   runApp(const SibTProductDesignApp());
   // runApp(const AuthScreen());
   // runApp(const ConsentToUse());

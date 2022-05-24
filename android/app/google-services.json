@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "587205655019",
+    "firebase_url": "https://sibtproductdesignfirebase-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "sibtproductdesignfirebase",
+    "storage_bucket": "sibtproductdesignfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587205655019:android:6105f69aa70df3a2dac1ae",
+        "android_client_info": {
+          "package_name": "com.sib_t_product_design_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "587205655019-6mj3f39cv1424m1ciqnfhm12j99tmcbe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFCPLScePFzwJuhEvKsvRyxcVqDiB60ME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "587205655019-6mj3f39cv1424m1ciqnfhm12j99tmcbe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -31,7 +31,8 @@ class _FlatItemsDrawingViewScreenState extends State<FlatItemsDrawingViewScreen>
     return MaterialApp(
       home: Scaffold(
         body: PhotoView(
-          imageProvider: AssetImage(args.largeCurrentDrawing),
+          imageProvider: NetworkImage(args.largeCurrentDrawing),
+          // imageProvider: AssetImage(args.largeCurrentDrawing),
         ),
       ),
     );
