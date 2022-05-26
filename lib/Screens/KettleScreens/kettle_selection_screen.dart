@@ -1,7 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../../Utils/decoration.dart';
 import '../../Utils/widgets.dart';
-import '../../Utils/pan_and_kettle_list.dart';
+// import '../../Utils/pan_and_kettle_list.dart';
 import 'kettle_drawing_selection_screen.dart';
 
 class KettleSelection extends StatefulWidget {
@@ -18,54 +19,58 @@ class _KettleSelectionState extends State<KettleSelection> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: nextPageAppBar(context, pageName),
         drawer: navDrawer(context),
         body: Container(
           decoration: backgroundOfOthersScreen,// Задание фонового изображения
-          child: ListView.builder(
-            itemCount: 8,
-            itemBuilder: (BuildContext context, int index) {
-              return Column(
-                children: [
-                  SizedBox(height: intermediateHeight(),),// Отступ по вертикали
-                  Center(
-                    child: SizedBox(
-                      height: heightOfButton(),// Высота кнопки
-                      width: widthOfButton(),// Ширина кнопки
-                      child: ElevatedButton(
-                        style: kettlesButtonDecoration,//Оформление границ и фона кнопки
-                        child: Column(
-                          children: [
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 15),// Отступ над изображением внутри кнопки,
-                                child: Image.asset ('assets/images/2707.png',),// Файл изображения
-                              ),
+          child: StreamBuilder(
+            stream: FirebaseFirestore.instance.collection('kettleList').snapshots(),
+            builder: (context, AsyncSnapshot<QuerySnapshot>snapshot) {
+              if (!snapshot.hasData) return const Text('Пустой список');
+              return ListView.builder(
+                itemCount: snapshot.data?.docs.length,
+                itemBuilder: (BuildContext context, int index) {
+                  final kettleList = snapshot.data?.docs[index];
+                  return Column(
+                    children: [
+                      SizedBox(height: intermediateHeight(),),// Отступ по вертикали
+                      Center(
+                        child: SizedBox(
+                          height: heightOfButton(),// Высота кнопки
+                          width: widthOfButton(),// Ширина кнопки
+                          child: ElevatedButton(
+                            style: kettlesButtonDecoration,//Оформление границ и фона кнопки
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(vertical: 15),// Отступ над изображением внутри кнопки,
+                                    child: Image(image: NetworkImage (kettleList?.get('kettlePicture'),),),// Файл изображения
+                                  ),
+                                ),
+                                Text(kettleList?.get('kettleName'),
+                                  textAlign: TextAlign.center,
+                                  style: kettleSelectionButtonTextStyle,
+                                ),
+                                Padding(
+                                  padding: bottomPadding(),// Отступ снизу под артикулом внутри кнопки
+                                  child: Text('арт. ${kettleList?.get('kettleArt')}',
+                                    textAlign: TextAlign.center,
+                                    style: kettleSelectionButtonTextStyle,
+                                  ),
+                                )
+                              ],
                             ),
-                            const Text('Чайник 1,0л (заварник)',
-                              textAlign: TextAlign.center,
-                              style: kettleSelectionButtonTextStyle,
-                            ),
-                            Padding(
-                              padding: bottomPadding(),// Отступ снизу под артикулом внутри кнопки
-                              child: const Text('арт. 2707',
-                                textAlign: TextAlign.center,
-                                style: kettleSelectionButtonTextStyle,
-                              ),
-                            )
-                          ],
+                            onPressed: () {  },
+                          ),
                         ),
-                        onPressed: () {  },
                       ),
-                    ),
-                  ),
-                  SizedBox(height: intermediateHeight(),),// Отступ по вертикали
-                ],
-              );
-            },
-              /*
+                      SizedBox(height: intermediateHeight(),),// Отступ по вертикали
+                    ],
+                  );
+                },
+                  /*
         //     children: [
         //       SizedBox(height: intermediateHeight(),),// Отступ по вертикали
         //       Center(
@@ -260,11 +265,13 @@ class _KettleSelectionState extends State<KettleSelection> {
         //       // ),// Кнопка выбора 2717
         //       // SizedBox(height: intermediateHeight(),),// Отступ по вертикали
         //       ],
-            */
-            ),// Список кнопок выбора изделия
+                */
+                );
+            }
+          ),// Список кнопок выбора изделия
           ),// Задача заднего фона
-        ),
-      );
+        )
+      ;
   }
 
   double heightOfButton() => 120;
