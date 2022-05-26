@@ -32,7 +32,7 @@ class _KettleDrawingViewScreenState extends State<KettleDrawingViewScreen> {
       home: Scaffold(
         body: PhotoView(
           // imageProvider: AssetImage('assets/drawings/pans/1607/ПЭ 33.01.01 Корпус.webp'),
-          imageProvider: AssetImage(args.largeCurrentDrawing),
+          imageProvider: NetworkImage(args.largeCurrentDrawing),
         ),
       ),
     );

@@ -63,7 +63,8 @@ class _KettleSelectionState extends State<KettleSelection> {
                               ],
                             ),
                             onPressed: () {
-                              kettleArt= kettleList?.get('kettleArt'); kettleName = kettleList?.get('kettleName');
+                              kettleArt= kettleList?.get('kettleArt');
+                              kettleName = kettleList?.get('kettleName');
                               Navigator.pushNamed(context, KettleDrawingSelectionScreen.routeName, arguments: PassedFromKettleSelectionScreenArguments(
                                 kettleArt,
                                 kettleName,
