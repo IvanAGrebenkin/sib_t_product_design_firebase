@@ -62,7 +62,14 @@ class _KettleSelectionState extends State<KettleSelection> {
                                 )
                               ],
                             ),
-                            onPressed: () {  },
+                            onPressed: () {
+                              kettleArt= kettleList?.get('kettleArt'); kettleName = kettleList?.get('kettleName');
+                              Navigator.pushNamed(context, KettleDrawingSelectionScreen.routeName, arguments: PassedFromKettleSelectionScreenArguments(
+                                kettleArt,
+                                kettleName,
+                              ),
+                              );
+                            },
                           ),
                         ),
                       ),
@@ -100,14 +107,14 @@ class _KettleSelectionState extends State<KettleSelection> {
         //                 ),// Артикул изделия
         //               ],
         //             ),
-        //             onPressed: (){
-        //               kettleArt= '2707'; kettleName=art2707;
-        //               Navigator.pushNamed(context, KettleDrawingSelectionScreen.routeName, arguments: PassedFromKettleSelectionScreenArguments(
-        //                 kettleArt,
-        //                 kettleName,
-        //               ),
-        //               );
-        //             },
+                    onPressed: (){
+                      kettleArt= '2707'; kettleName=art2707;
+                      Navigator.pushNamed(context, KettleDrawingSelectionScreen.routeName, arguments: PassedFromKettleSelectionScreenArguments(
+                        kettleArt,
+                        kettleName,
+                      ),
+                      );
+                    },
         //           ),
         //         ),// Габариты кнопки
         //       ),// Кнопка выбора 2707
