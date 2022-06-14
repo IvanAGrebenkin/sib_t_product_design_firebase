@@ -20,6 +20,7 @@ class _AuthScreenState extends State<AuthScreen> {
     final password = _passwordTextController.text;
     if (login == 'admin' && password == 'admin') {
       errorText = null;
+
       Navigator.pushNamed(context, '/consent_to_use');
     }
     else {
@@ -29,9 +30,8 @@ class _AuthScreenState extends State<AuthScreen> {
   }
 
   @override
-
-
   Widget build(BuildContext context) {
+    // isConsentToUse();
     final errorText = this.errorText;
     return MaterialApp(
       home: Scaffold(
@@ -83,7 +83,6 @@ class _AuthScreenState extends State<AuthScreen> {
                     child: ElevatedButton(
                       style: elevatedButtonDecoration,// Оформление кнопки
                       onPressed: _auth,// Действие по нажатию
-                      // onPressed: (){Navigator.pushNamed(context, '/consent_to_use');},// Действие по нажатию
                       child: const Text('Войти',
                         style: TextStyle(
                           fontSize: 18,

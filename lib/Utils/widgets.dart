@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 
+
+
 PreferredSizeWidget homePageAppBar(context, pageName) => AppBar(
     leading: Builder(
       builder: (BuildContext context) {
@@ -111,7 +113,9 @@ PreferredSizeWidget panDrawingSelectionScreenAppBar(context, pageName) => AppBar
     ]
 );// AppBar для страницы выбора чертежа кастрюли
 
+
 Widget navDrawer(context) => Drawer(
+
   child: SingleChildScrollView(
     child: ConstrainedBox(
       constraints: BoxConstraints(
@@ -177,6 +181,14 @@ Widget navDrawer(context) => Drawer(
             ListTile(
               leading: const Icon(Icons.exit_to_app,
                 color: Colors.blueAccent,),
+              title: const Text('Выйти из учетной записи'),
+              onTap: () {
+                Navigator.pushNamed(context, '/');
+              },
+            ),// Кнопка выхода из приложения
+            ListTile(
+              leading: const Icon(Icons.exit_to_app,
+                color: Colors.blueAccent,),
               title: const Text('Закрыть приложение'),
               onTap: (){SystemChannels.platform.invokeMethod('SystemNavigator.pop');},
             ),// Кнопка выхода из приложения
@@ -192,5 +204,4 @@ Widget navDrawer(context) => Drawer(
     ),// Виджет для задания габаритов
   ),// Скроллинг внутри панели
 );// Выдвигающаяся панель Drawer
-
 
